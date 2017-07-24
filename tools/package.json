@@ -1,0 +1,19 @@
+{
+  "name": "thing-tracker-tools",
+  "version": "0.0.0",
+  "description": "Tools for assembling thing-tracker files from parts",
+  "main": "refresh.js",
+  "scripts": {
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cscott/thing-tracker.git"
+  },
+  "author": "C. Scott Ananian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cscott/thing-tracker/issues"
+  },
+  "homepage": "https://github.com/cscott/thing-tracker#readme"
+}
