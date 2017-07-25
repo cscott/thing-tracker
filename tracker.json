@@ -27,9 +27,9 @@
                 "GPL3"
             ],
             "thumbnailUrls": [
-                "https://github.com/cscott/3d-multimaterial/raw/master/thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg",
-                "https://github.com/cscott/3d-multimaterial/raw/master/thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120623.jpg",
-                "https://github.com/cscott/3d-multimaterial/raw/master/thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170723_222441.jpg"
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120623.jpg",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170723_222441.jpg"
             ],
             "subject": [
                 "SUBJECT"
@@ -74,7 +74,7 @@
                     "url": "https://github.com/cscott/3d-multimaterial/raw/master/bowden-stl/bowden-block-4.stl",
                     "type": "generated",
                     "mimetype": "application/sla",
-                    "thumbnailUrl": "imgs/IMG_20170721_120619.jpg"
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg"
                 }
             ],
             "instructions": [
@@ -82,10 +82,11 @@
                     "step": 1,
                     "text": "First, print out all the parts.",
                     "images": [
-                        "imgs/IMG_20170721_120619.jpg"
+                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg"
                     ]
                 }
-            ]
+            ],
+            "updated": "2017-07-25T16:48:08.217Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -104,6 +105,10 @@
             "licenses": [
                 "GPL3"
             ],
+            "thumbnailUrls": [
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2-thunk.sch.png"
+            ],
             "tags": [
                 "printrbot",
                 "extrudrboard",
@@ -116,10 +121,18 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch",
                     "type": "source",
                     "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "Extrudrboard2.sch.pdf"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
                 },
                 {
                     "partNumber": "2",
+                    "description": "Extrudrboard2 schematic (PDF)",
+                    "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf",
+                    "type": "generated",
+                    "mimetype": "application/pdf",
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                },
+                {
+                    "partNumber": "3",
                     "description": "Extrudrboard2 pcb",
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.brd",
                     "type": "source",
@@ -127,15 +140,23 @@
                     "thumbnailUrl": "Extrudrboard2.brd.pdf"
                 },
                 {
-                    "partNumber": "3",
+                    "partNumber": "4",
                     "description": "Extrudrboard2 thunk schematic",
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch",
                     "type": "source",
                     "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "Extrudrboard2.sch.pdf"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
                 },
                 {
-                    "partNumber": "4",
+                    "partNumber": "5",
+                    "description": "Extrudrboard2 thunk schematic (PDF)",
+                    "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf",
+                    "type": "generated",
+                    "mimetype": "application/pdf",
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                },
+                {
+                    "partNumber": "6",
                     "description": "Extrudrboard2 thunk pcb",
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.brd",
                     "type": "source",
@@ -161,9 +182,9 @@
                     "title": "Forum discussion of Extrudrboard2"
                 }
             ],
-            "updated": "2017-07-25T02:10:07.328Z"
+            "updated": "2017-07-25T16:55:15.755Z"
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-25T02:10:07.328Z"
+    "updated": "2017-07-25T16:55:15.755Z"
 }

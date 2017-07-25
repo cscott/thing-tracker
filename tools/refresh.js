@@ -72,16 +72,39 @@ if (!/\/$/.test(baseURL)) { baseURL += '/'; }
 
 // Copy over thumbnails
 var thumbPath = path.join(__dirname, '..', 'thumbnails', thing.id);
+var thumbMap = new Map();
+var mapArrayUrls = function(arr) {
+    for (var i=0; i<arr.length; i++) {
+        if (thumbMap.has(arr[i])) {
+            arr[i] = thumbMap.get(arr[i]);
+        }
+    }
+};
+var mapFieldUrls = function(obj, props) {
+    for (var i=0; i<props.length; i++) {
+        if (thumbMap.has(obj[props[i]])) {
+            obj[props[i]] = thumbMap.get(obj[props[i]]);
+        }
+    }
+};
 rimraf.sync(thumbPath, { disableGlob: true });
 if ((thing.thumbnailUrls || []).length) {
-    thing.thumbnailUrls = thing.thumbnailUrls.map(function(url) {
-        if (/^http/.test(url)) { return url; }
+    thing.thumbnailUrls.forEach(function(url) {
+        if (/^http/.test(url)) { return; }
         var wasPath = path.join(path.dirname(argv.file), url);
         mkdirp.sync(path.join(thumbPath, path.dirname(url)));
         cp.sync(wasPath, path.join(thumbPath, url));
-        return baseURL + 'thumbnails/' + thing.id + '/' + url;
+        var newPath = 'thumbnails/' + thing.id + '/' + url;
+        thumbMap.set(url, newPath);
     });
 }
+mapArrayUrls(thing.thumbnailUrls || []);
+(thing.billOfMaterials || []).forEach(function(bom) {
+    mapFieldUrls(bom, ['url', 'thumbnailUrl']);
+});
+(thing.instructions || []).forEach(function(instruct) {
+    mapArrayUrls(instruct.images || []);
+});
 
 // Update Tracker JSON!
 var i;
@@ -91,6 +114,6 @@ for (i = 0; i<tracker.things.length; i++) {
 }
 tracker.things[i] = thing;
 tracker.thingsCount = tracker.things.length;
-tracker.updated = new Date().toISOString();
+tracker.updated = thing.updated = new Date().toISOString();
 fs.writeFileSync(trackerPath, JSON.stringify(tracker, null, 4));
 process.exit(0);
