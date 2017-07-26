@@ -23,13 +23,18 @@
                     "email": "things@cscott.net"
                 }
             ],
+            "created": "2017-07-24T21:59:00-04:00",
             "licenses": [
                 "GPL3"
             ],
             "thumbnailUrls": [
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120623.jpg",
-                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170723_222441.jpg"
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170723_222441.jpg",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/bowden.png",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/gearhead-remix.png",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/mount.png",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/spool-remix.png"
             ],
             "subject": [
                 "SUBJECT"
@@ -49,32 +54,99 @@
             "billOfMaterials": [
                 {
                     "partNumber": "1",
-                    "description": "OpenSCAD source code",
+                    "description": "Bowden Couplers (OpenSCAD source)",
                     "url": "https://github.com/cscott/3d-multimaterial/raw/master/bowden.scad",
                     "type": "source",
-                    "mimetype": "application/x-scad"
+                    "mimetype": "application/x-scad",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/bowden.png"
+                },
+                {
+                    "partNumber": "1a",
+                    "description": "2-way bowden coupler to extruder handle",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-2.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "1b",
+                    "description": "3-way bowden coupler to extruder handle",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-3.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "1c",
+                    "description": "4-way bowden coupler to extruder handle",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-4.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg"
                 },
                 {
                     "partNumber": "2",
-                    "description": "2-way bowden coupler to extruder handle",
-                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/bowden-stl/bowden-block-2.stl",
+                    "description": "Extruder mount (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/mount.scad",
+                    "type": "source",
+                    "mimetype": "application/x-scad",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/mount.png"
+                },
+                {
+                    "partNumber": "2a",
+                    "description": "Extruder mount on SPANNERHANDS spool (1kg)",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/mount-stl/mount-1kg.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "2b",
+                    "description": "Extruder mount on SPANNERHANDS spool (750g)",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/mount-stl/mount-750g.stl",
                     "type": "generated",
                     "mimetype": "application/sla"
                 },
                 {
                     "partNumber": "3",
-                    "description": "3-way bowden coupler to extruder handle",
-                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/bowden-stl/bowden-block-3.stl",
+                    "description": "SPANNERHANDS spool LID 2 remix (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/spool-remix.scad",
+                    "type": "source",
+                    "mimetype": "application/x-scad",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/spool-remix.png"
+                },
+                {
+                    "partNumber": "3a",
+                    "description": "SPANNERHANDS spool LID 2 remix",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl",
                     "type": "generated",
                     "mimetype": "application/sla"
                 },
                 {
                     "partNumber": "4",
-                    "description": "4-way bowden coupler to extruder handle",
-                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/bowden-stl/bowden-block-4.stl",
+                    "description": "Gear head extruder remix (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-multimaterial/raw/master/gearhead-remix.scad",
+                    "type": "source",
+                    "mimetype": "application/x-scad",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/gearhead-remix.png"
+                },
+                {
+                    "partNumber": "4a",
+                    "description": "Gear head extruder remix, Base",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-base.stl",
                     "type": "generated",
-                    "mimetype": "application/sla",
-                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg"
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "4b",
+                    "description": "Gear head extruder remix, Clamp",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-clamp.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "4c",
+                    "description": "Gear head extruder remix, Gearbox",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-gearbox.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla"
                 }
             ],
             "instructions": [
@@ -86,7 +158,7 @@
                     ]
                 }
             ],
-            "updated": "2017-07-25T16:48:08.217Z"
+            "updated": "2017-07-26T22:08:09.211Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -186,5 +258,5 @@
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-25T16:55:15.755Z"
+    "updated": "2017-07-26T22:08:09.211Z"
 }
