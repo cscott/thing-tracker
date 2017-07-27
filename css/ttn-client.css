@@ -41,7 +41,8 @@ html, body {
 }
 
 .thing-list li {
-  list-style: none;
+    list-style: none;
+    clear: both;
 }
 
 #stlviewer {
