@@ -17,6 +17,7 @@ var path = require('path');
 var rimraf = require('rimraf');
 var mkdirp = require('mkdirp');
 var cp = require('cp');
+var StlThumbnailer = require('node-stl-thumbnailer');
 
 var trackerPath = path.join(__dirname, '..', 'tracker.json');
 var trackerSchema = require('./schema.json');
@@ -55,8 +56,13 @@ var readJSON = function(file, schema) {
     return json;
 };
 
+var isLocal = function(url) {
+    return ! /^https?:/.test(url);
+};
+
 var tracker = readJSON(trackerPath, trackerSchema);
 var thing = readJSON(argv.file, trackerSchema.properties.things.items);
+var done = Promise.resolve();
 
 // Guess about base URL
 var baseURL = argv.base;
@@ -83,15 +89,6 @@ if (!/\/$/.test(baseURL)) { baseURL += '/'; }
             bom.mimetype = mimeTypes[m[1]];
         }
     }
-    if (!/^http/.test(bom.url)) {
-        if (bom.mimetype === 'application/sla' && githubBaseURL) {
-            // link to github page for STL file previewer
-            bom.url = githubBaseURL + bom.url;
-        } else {
-            // direct download
-            bom.url= baseURL + bom.url;
-        }
-    }
 });
 
 
@@ -115,20 +112,59 @@ var mapFieldUrls = function(obj, props) {
 rimraf.sync(thumbPath, { disableGlob: true });
 if ((thing.thumbnailUrls || []).length) {
     thing.thumbnailUrls.forEach(function(url) {
-        if (/^http/.test(url)) { return; }
+        if (!isLocal(url)) { return; }
         var wasPath = path.join(path.dirname(argv.file), url);
         mkdirp.sync(path.join(thumbPath, path.dirname(url)));
         cp.sync(wasPath, path.join(thumbPath, url));
         var newPath = 'thumbnails/' + thing.id + '/' + url;
         thumbMap.set(url, newPath);
     });
-}
+} else { thing.thumbnailUrls = []; }
+
+// Create some thumbnails automatically.
+(thing.billOfMaterials || []).forEach(function(bom) {
+    if (!bom.thumbnailUrl && isLocal(bom.url)) {
+        // generate some preview images automatically
+        var url = bom.url; // because it will change!
+        var newPath = 'thumbnails/' + thing.id + '/' + url + '.png';
+        // XXX check if this already exists, rename if so.
+        if (bom.mimetype === 'application/sla') {
+            mkdirp.sync(path.join(thumbPath, path.dirname(url)));
+            bom.thumbnailUrl = newPath;
+            thing.thumbnailUrls.push(newPath);
+            done = done.then(function() {
+                return new StlThumbnailer({
+                    filePath: path.join(path.dirname(argv.file), url),
+                    requestThumbnails: [ { width: 500, height: 500 } ]
+                }).then(function(thumbnails) {
+                    var buf = thumbnails[0].toBuffer();
+                    fs.writeFileSync(
+                        path.join(__dirname, '..', newPath), buf
+                    );
+                });
+            });
+        }
+    }
+});
+
 mapArrayUrls(thing.thumbnailUrls || []);
 (thing.billOfMaterials || []).forEach(function(bom) {
     mapFieldUrls(bom, ['url', 'thumbnailUrl']);
 });
 (thing.instructions || []).forEach(function(instruct) {
     mapArrayUrls(instruct.images || []);
+});
+
+(thing.billOfMaterials || []).forEach(function(bom) {
+    if (isLocal(bom.url)) {
+        if (bom.mimetype === 'application/sla' && githubBaseURL) {
+            // link to github page for STL file previewer
+            bom.url = githubBaseURL + bom.url;
+        } else {
+            // direct download
+            bom.url= baseURL + bom.url;
+        }
+    }
 });
 
 // Update Tracker JSON!
@@ -141,4 +177,4 @@ tracker.things[i] = thing;
 tracker.thingsCount = tracker.things.length;
 tracker.updated = thing.updated = new Date().toISOString();
 fs.writeFileSync(trackerPath, JSON.stringify(tracker, null, 4));
-process.exit(0);
+done = done.then(function() { process.exit(0); });

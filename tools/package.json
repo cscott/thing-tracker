@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cscott/thing-tracker/issues"
   },
-  "homepage": "https://github.com/cscott/thing-tracker#readme"
+  "homepage": "https://github.com/cscott/thing-tracker#readme",
+  "dependencies": {
+    "node-stl-thumbnailer": "^1.0.1"
+  }
 }
