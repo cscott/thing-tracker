@@ -9,12 +9,12 @@
       <div class="span4">
 
         <div id="lead-image-container" ngShow="thing.thumbnailUrls[0]">
-            <img class='lead-image'  ng-src='{{ thing.thumbnailUrls[0] }}' />
+            <a href="{{ thing.thumbnailUrls[0] }}" data-lightbox="image-1"><img class='lead-image'  ng-src='{{ thing.thumbnailUrls[0] }}' /></a>
         </div>
 
         <ul id='thumbnails' class='thumbnails'>
           <li ng-repeat="thumbnail in thing.thumbnailUrls">
-              <img ng-hide='$index==0' data-lightbox="image-1" class='imgfile' ng-src='{{ thumbnail }}' />
+              <a href="{{ thumbnail }}" data-lightbox="image-1"><img ng-hide='$index==0' class='imgfile' ng-src='{{ thumbnail }}' /></a>
           </li>
         </ul>
 
