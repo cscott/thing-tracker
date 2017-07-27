@@ -21,6 +21,17 @@ var cp = require('cp');
 var trackerPath = path.join(__dirname, '..', 'tracker.json');
 var trackerSchema = require('./schema.json');
 
+var mimeTypes = {
+    pdf: 'application/pdf',
+    stl: 'application/sla',
+    scad: 'application/x-scad',
+    jpg: 'image/jpeg',
+    jpeg: 'image/jpeg',
+    png: 'image/png',
+    txt: 'text/plain',
+    md: 'text/plain',
+};
+
 var readJSON = function(file, schema) {
     var str, json;
     try {
@@ -49,11 +60,13 @@ var thing = readJSON(argv.file, trackerSchema.properties.things.items);
 
 // Guess about base URL
 var baseURL = argv.base;
+var githubBaseURL;
 if (!baseURL) {
     var m = /^https?:\/\/github.com\/([^\/]+)\/([^\/]+)\/?$/.exec(thing.url);
     if (m) {
         //baseURL = 'https://' + m[1] + '.github.io/' + m[2] + '/';
         baseURL = 'https://github.com/' + m[1] + '/' + m[2] + '/raw/master/';
+        githubBaseURL = 'https://github.com/' + m[1] + '/' + m[2] + '/blob/master/';
     }
 }
 if (!baseURL) {
@@ -64,8 +77,20 @@ if (!/\/$/.test(baseURL)) { baseURL += '/'; }
 
 // Adjust links to BOM
 (thing.billOfMaterials || []).forEach(function(bom) {
+    if (!bom.mimetype) {
+        var m = /\.([^.])+$/.exec(bom.url);
+        if (m && mimeTypes[m[1]]) {
+            bom.mimetype = mimeTypes[m[1]];
+        }
+    }
     if (!/^http/.test(bom.url)) {
-        bom.url= baseURL + bom.url;
+        if (bom.mimetype === 'application/sla' && githubBaseURL) {
+            // link to github page for STL file previewer
+            bom.url = githubBaseURL + bom.url;
+        } else {
+            // direct download
+            bom.url= baseURL + bom.url;
+        }
     }
 });
 
