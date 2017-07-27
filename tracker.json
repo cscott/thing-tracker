@@ -28,8 +28,8 @@
                 "GPL3"
             ],
             "thumbnailUrls": [
-                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg",
-                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120623.jpg",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170724_211042.jpg",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170723_222441.jpg",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/bowden.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/thumbnails/gearhead-remix.png",
@@ -169,13 +169,39 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "First, print out all the parts.",
+                    "text": "Start by printing out a SPANNERHANDS spool for each bowden extruder you are going to use.  Use spool-remix-lid2.stl instead of the LID2 part. Attach the PTFE_COUPLER_v2_0.stl to spool-remix-lid2, and screw mount-1kg.stl to LID1 (where the PTFE_COUPLER part would normally go).  Attach your stepper and extruder to mount-1kg.",
                     "images": [
-                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170721_120619.jpg"
+                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg",
+                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170724_211042.jpg"
                     ]
+                },
+                {
+                    "step": 2,
+                    "text": "Print out our remixed version of the Printrbot gear head extruder, in three parts: base, clamp, and gearbox."
+                },
+                {
+                    "step": 3,
+                    "text": "Print out the 2-way, 3-way, or 4-way bowden merge, and attach it to the top of the remixed gear head extruder."
                 }
             ],
-            "updated": "2017-07-27T03:08:54.684Z"
+            "relationships": [
+                {
+                    "type": "reference",
+                    "url": "https://github.com/cscott/extrudrboard2",
+                    "title": "Extrudrboard2"
+                },
+                {
+                    "type": "reference",
+                    "url": "https://www.thingiverse.com/thing:2119644",
+                    "title": "SPANNERHANDS spool system"
+                },
+                {
+                    "type": "reference",
+                    "url": "https://www.youmagine.com/designs/printrbot-gear-head-extruder",
+                    "title": "Printrbot gear head extruder"
+                }
+            ],
+            "updated": "2017-07-27T03:42:54.793Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -275,5 +301,5 @@
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-27T03:08:54.684Z"
+    "updated": "2017-07-27T03:42:54.793Z"
 }
