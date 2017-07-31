@@ -18,6 +18,8 @@ var path = require('path');
 var rimraf = require('rimraf');
 var mkdirp = require('mkdirp');
 var cp = require('cp');
+var isRelativeUrl = require('is-relative-url');
+var URL = require('dom-urls'); // built-in in node >= 7.0.0
 
 var StlThumbnailer = require('node-stl-thumbnailer');
 var domino = require('domino');
@@ -61,10 +63,6 @@ var readJSON = function(file, schema) {
     return json;
 };
 
-var isLocal = function(url) {
-    return ! /^https?:/.test(url);
-};
-
 var tracker = readJSON(trackerPath, trackerSchema);
 var thing = readJSON(argv.file, trackerSchema.properties.things.items);
 var done = Promise.resolve();
@@ -85,6 +83,11 @@ if (!baseURL) {
     process.exit(2);
 }
 if (!/\/$/.test(baseURL)) { baseURL += '/'; }
+
+var addBaseURL = function(s, otherBase) {
+    var u = new URL(s, otherBase || baseURL);
+    return u.href;
+};
 
 // Fill in thing.json based on a README.
 
@@ -126,6 +129,32 @@ var isValidSpdx = function(txt) {
     }
 };
 
+var removeEls = function(doc, selector) {
+    Array.from(doc.querySelectorAll(selector)).forEach(function(n) {
+        n.remove();
+    });
+};
+
+var adjustLinks = function(doc) {
+    var adjOne = function(el, attrName) {
+        var val = el.getAttribute(attrName);
+        if (isRelativeUrl(val)) {
+            // link to github page for STL file previewer
+            if (/\.stl$/.test(val)) {
+                el.setAttribute(attrName, addBaseURL(val, githubBaseURL));
+            } else {
+                el.setAttribute(attrName, addBaseURL(val));
+            }
+        }
+    };
+    Array.from(doc.querySelectorAll('a[href]')).forEach(function(a) {
+        adjOne(a, 'href');
+    });
+    Array.from(doc.querySelectorAll('img[src]')).forEach(function(img) {
+        adjOne(img, 'src');
+    });
+};
+
 var stripWS = function(s) {
     return s.replace(/(^\s+)|(\s+$)/g, '');
 };
@@ -136,8 +165,12 @@ if (argv.readme) {
         marked(fs.readFileSync(argv.readme, 'utf8')), true
     );
     // description
-    var desc = extractSectionHtml(doc, 'h2#description');
-    if (desc !== null) { thing.description = desc; }
+    var descDoc = extractSectionDoc(doc, 'h2#description');
+    if (descDoc !== null) {
+        removeEls(descDoc, 'img[align], br[clear], p:empty');
+        adjustLinks(descDoc);
+        thing.description = stripWS(descDoc.body.innerHTML);
+    }
     // license
     var licenseDoc = extractSectionDoc(doc, 'h2#license');
     if (licenseDoc) {
@@ -158,17 +191,26 @@ if (argv.readme) {
         var i = [];
         Array.from(instructDoc.querySelectorAll('h3')).forEach(function(h3) {
             var chunk = extractSectionDoc(doc, 'h3#' + h3.id);
-            var title = h3.textContent.replace(/Step\s+\d+[:.]?/, '');
+            var title = stripWS(h3.textContent.replace(/Step\s+\d+[:.]?/, ''));
             var images = [];
-            Array.from(chunk.querySelectorAll('img')).forEach(function(img) {
+            Array.from(chunk.querySelectorAll('img[align]')).forEach(function(img) {
                 var src = img.getAttribute('src');
                 if (/^\.\//.test(src)) {
                     images.push(src.slice(2));
                 }
             });
+            // Mutate instruction HTML
+            removeEls(chunk, 'img[align], br[clear], p:empty');
+            if (title) {
+                var b = chunk.createElement('b');
+                b.textContent = title;
+                chunk.body.insertBefore(chunk.createElement('br'), chunk.body.firstChild);
+                chunk.body.insertBefore(b, chunk.body.firstChild);
+            }
+            adjustLinks(chunk);
             i.push({
                 step: i.length + 1,
-                text: '<h4>'+stripWS(title)+'</h4>\n' + stripWS(chunk.body.textContent),
+                text: stripWS(chunk.body.innerHTML),
                 images: images.length ? images : undefined
             });
         });
@@ -192,7 +234,7 @@ if (argv.readme) {
     }
 }
 
-// Adjust links to BOM
+// Adjust mimetypes in BOM
 (thing.billOfMaterials || []).forEach(function(bom) {
     if (!bom.mimetype) {
         var m = /\.([^.])+$/.exec(bom.url);
@@ -210,8 +252,8 @@ var mapArrayUrls = function(arr, alsoLocal) {
     for (var i=0; i<arr.length; i++) {
         if (thumbMap.has(arr[i])) {
             arr[i] = thumbMap.get(arr[i]);
-        } else if (alsoLocal && isLocal(arr[i])) {
-            arr[i] = baseURL + arr[i];
+        } else if (alsoLocal && isRelativeUrl(arr[i])) {
+            arr[i] = addBaseURL(arr[i]);
         }
     }
 };
@@ -219,15 +261,15 @@ var mapFieldUrls = function(obj, props, alsoLocal) {
     for (var i=0; i<props.length; i++) {
         if (thumbMap.has(obj[props[i]])) {
             obj[props[i]] = thumbMap.get(obj[props[i]]);
-        } else if (alsoLocal && isLocal(obj[props[i]])) {
-            obj[props[i]] = baseURL + obj[props[i]];
+        } else if (alsoLocal && isRelativeUrl(obj[props[i]])) {
+            obj[props[i]] = addBaseURL(obj[props[i]]);
         }
     }
 };
 rimraf.sync(thumbPath, { disableGlob: true });
 if ((thing.thumbnailUrls || []).length) {
     thing.thumbnailUrls.forEach(function(url) {
-        if (!isLocal(url)) { return; }
+        if (!isRelativeUrl(url)) { return; }
         var wasPath = path.join(path.dirname(argv.file), url);
         mkdirp.sync(path.join(thumbPath, path.dirname(url)));
         cp.sync(wasPath, path.join(thumbPath, url));
@@ -238,7 +280,7 @@ if ((thing.thumbnailUrls || []).length) {
 
 // Create some thumbnails automatically.
 (thing.billOfMaterials || []).forEach(function(bom) {
-    if (!bom.thumbnailUrl && isLocal(bom.url)) {
+    if (!bom.thumbnailUrl && isRelativeUrl(bom.url)) {
         // generate some preview images automatically
         var url = bom.url; // because it will change!
         var newPath = 'thumbnails/' + thing.id + '/' + url + '.png';
@@ -271,13 +313,13 @@ mapArrayUrls(thing.thumbnailUrls || []);
 });
 
 (thing.billOfMaterials || []).forEach(function(bom) {
-    if (isLocal(bom.url)) {
+    if (isRelativeUrl(bom.url)) {
         if (bom.mimetype === 'application/sla' && githubBaseURL) {
             // link to github page for STL file previewer
-            bom.url = githubBaseURL + bom.url;
+            bom.url = addBaseURL(bom.url, githubBaseURL);
         } else {
             // direct download
-            bom.url= baseURL + bom.url;
+            bom.url= addBaseURL(bom.url);
         }
     }
 });

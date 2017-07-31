@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/cscott/thing-tracker#readme",
   "dependencies": {
+    "dom-urls": "^1.1.0",
     "domino": "^1.0.28",
+    "is-relative-url": "^2.0.0",
     "marked": "^0.3.6",
     "node-stl-thumbnailer": "^1.0.1",
     "spdx-expression-parse": "^2.0.2"
