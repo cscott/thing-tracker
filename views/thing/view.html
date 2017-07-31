@@ -118,7 +118,7 @@
                     {{instruction.text}}
                     <br>
                     <span ng-repeat="image in instruction.images">
-                      <img width="30px" ng-src="{{ image }}">
+                      <a href="{{ image }}" data-lightbox="step-{{instruction.step}}"><img width="30px" ng-src="{{ image }}"></a>
                     </span>
                     <br>
                     <small ng-show="instruction.xInstructionMetadata.note"><span class="label label-warning">Note:</span> {{instruction.xInstructionMetadata.note}}</small>
