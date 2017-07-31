@@ -118,7 +118,7 @@
                     <div ng-bind-html="instruction.text | nl2br"></div>
                     <br>
                     <span ng-repeat="image in instruction.images">
-                      <a href="{{ image }}" data-lightbox="step-{{instruction.step}}"><img width="30px" ng-src="{{ image }}"></a>
+                      <a href="{{ image }}" data-lightbox="step-{{instruction.step}}"><img width="50px" ng-src="{{ image }}"></a>
                     </span>
                     <br>
                     <small ng-show="instruction.xInstructionMetadata.note"><span class="label label-warning">Note:</span> {{instruction.xInstructionMetadata.note}}</small>
@@ -128,7 +128,8 @@
 
             <tab heading="Relationships" ng-show="thing.relationships">
               <ul class="list-item" ng-repeat="relationship in thing.relationships">
-                <li><a href="{{relationship.url}}">{{ relationship.url}}</a></li>
+                <li ng-show="relationship.title"><a href="{{relationship.url}}">{{ relationship.title }}</a></li>
+                <li ng-hide="relationship.title"><a href="{{relationship.url}}">{{ relationship.url }}</a></li>
               </ul>
             </tab>
 
