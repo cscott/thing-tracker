@@ -115,7 +115,7 @@
                     <small>{{instruction.step}}</small>
                   </div>
                   <div class="span10">
-                    {{instruction.text}}
+                    <div ng-bind-html="instruction.text | nl2br"></div>
                     <br>
                     <span ng-repeat="image in instruction.images">
                       <a href="{{ image }}" data-lightbox="step-{{instruction.step}}"><img width="30px" ng-src="{{ image }}"></a>
