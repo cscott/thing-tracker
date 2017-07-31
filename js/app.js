@@ -1,6 +1,7 @@
 var app = angular.module('TTNRelay', [
     'ngSanitize',
     'ngRoute',
+    'timeRelative',
     'ui.bootstrap'
   ])
 
