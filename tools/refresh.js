@@ -158,10 +158,17 @@ if (argv.readme) {
         var i = [];
         Array.from(instructDoc.querySelectorAll('h3')).forEach(function(h3) {
             var chunk = extractSectionDoc(doc, 'h3#' + h3.id);
+            var images = [];
+            Array.from(chunk.querySelectorAll('img')).forEach(function(img) {
+                var src = img.getAttribute('src');
+                if (/^\.\//.test(src)) {
+                    images.push(src.slice(2));
+                }
+            });
             i.push({
                 step: i.length + 1,
-                text: stripWS(chunk.body.textContent)
-                // XXX images
+                text: stripWS(chunk.body.textContent),
+                images: images.length ? images : undefined
             });
         });
         thing.instructions = i;
@@ -198,17 +205,21 @@ if (argv.readme) {
 // Copy over thumbnails
 var thumbPath = path.join(__dirname, '..', 'thumbnails', thing.id);
 var thumbMap = new Map();
-var mapArrayUrls = function(arr) {
+var mapArrayUrls = function(arr, alsoLocal) {
     for (var i=0; i<arr.length; i++) {
         if (thumbMap.has(arr[i])) {
             arr[i] = thumbMap.get(arr[i]);
+        } else if (alsoLocal && isLocal(arr[i])) {
+            arr[i] = baseURL + arr[i];
         }
     }
 };
-var mapFieldUrls = function(obj, props) {
+var mapFieldUrls = function(obj, props, alsoLocal) {
     for (var i=0; i<props.length; i++) {
         if (thumbMap.has(obj[props[i]])) {
             obj[props[i]] = thumbMap.get(obj[props[i]]);
+        } else if (alsoLocal && isLocal(obj[props[i]])) {
+            obj[props[i]] = baseURL + obj[props[i]];
         }
     }
 };
@@ -255,7 +266,7 @@ mapArrayUrls(thing.thumbnailUrls || []);
     mapFieldUrls(bom, ['url', 'thumbnailUrl']);
 });
 (thing.instructions || []).forEach(function(instruct) {
-    mapArrayUrls(instruct.images || []);
+    mapArrayUrls(instruct.images || [], true);
 });
 
 (thing.billOfMaterials || []).forEach(function(bom) {

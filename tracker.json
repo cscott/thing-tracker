@@ -41,7 +41,7 @@
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/mount-stl/mount-1kg.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/mount-stl/mount-750g.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-lid2.stl.png",
-                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-handle.stl.png",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-hanger.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-base.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-clamp.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-gearbox.stl.png"
@@ -134,10 +134,10 @@
                 {
                     "partNumber": "3b",
                     "description": "SPANNERHANDS spool WALL_MOUNT_v2_0 remix",
-                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-handle.stl",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-hanger.stl",
                     "type": "generated",
                     "mimetype": "application/sla",
-                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-handle.stl.png"
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-hanger.stl.png"
                 },
                 {
                     "partNumber": "4",
@@ -175,31 +175,51 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "Start by printing out a SPANNERHANDS spool for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use spool-remix-lid2.stl instead of the\nstock LID2 part.  Mount the SPANNERHANDS PTFE_COUPLER_v2_0.stl\npart to spool-remix-lid2.stl.  We are going to mount our\nbowden extruder on LID1, where the PTFE_COUPLER part would\nnormally go.  Assemble the LID_Bracket, BASE_Bracket,\nand two CLASP_BRACKET_v2_0 parts; I printed these in a contrasting\ncolor.  Use two Glue_Joint parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings."
+                    "text": "<b>Foo</b>\nStart by printing out a SPANNERHANDS spool for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use spool-remix-lid2.stl instead of the\nstock LID2 part.  Mount the SPANNERHANDS PTFE_COUPLER_v2_0.stl\npart to spool-remix-lid2.stl.  We are going to mount our\nbowden extruder on LID1, where the PTFE_COUPLER part would\nnormally go.  Assemble the LID_Bracket, BASE_Bracket,\nand two CLASP_BRACKET_v2_0 parts; I printed these in a contrasting\ncolor.  Use two Glue_Joint parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings.",
+                    "images": [
+                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg"
+                    ]
                 },
                 {
                     "step": 2,
-                    "text": "Now print out mount-1kg.stl and attach it to the LID1 part of the\nspool, with four M3x10mm screws like all of the other SPANNERHANDS\nspool parts.  After it is attached to the spool you can mount the\nextruder, placing the mount between the extruder body and the stepper.\nI recommend M3x25mm screws here; some models of Printrbot extruder\nmight need some extra length to account for the mounting plate between\nthe extruder and stepper.\nYou can optionally use three M3x8mm screws to secure the bottom of\nthe extruder.  Some models of Printrbot extruder (for example, the\ninjection-molded plastic extruder) don’t have these mounting holes.\nThey are probably overkill for this use anyway.\n\n\nInsert a\nGroove mount 1.75mm Bowden coupler\nwhere the hotend would usually mount on the extruder.\n\n\nYou can route the wires for the stepper down the back of the spool and\nthrough the hinge.  You’ll probably need servo extension cables to\nreach your Extrudrboard/Extrudrboard2 from wherever you decide to\nmount your spools.  You can use spool-remix-hanger.stl to mount\nthe spool to the wall while leaving room for the stepper motor cable."
+                    "text": "<b>Foo</b>\nNow print out mount-1kg.stl and attach it to the LID1 part of the\nspool, with four M3x10mm screws like all of the other SPANNERHANDS\nspool parts.  After it is attached to the spool you can mount the\nextruder, placing the mount between the extruder body and the stepper.\nI recommend M3x25mm screws here; some models of Printrbot extruder\nmight need some extra length to account for the mounting plate between\nthe extruder and stepper.\nYou can optionally use three M3x8mm screws to secure the bottom of\nthe extruder.  Some models of Printrbot extruder (for example, the\ninjection-molded plastic extruder) don’t have these mounting holes.\nThey are probably overkill for this use anyway.\n\n\nInsert a\nGroove mount 1.75mm Bowden coupler\nwhere the hotend would usually mount on the extruder.\n\n\nYou can route the wires for the stepper down the back of the spool and\nthrough the hinge.  You’ll probably need servo extension cables to\nreach your Extrudrboard/Extrudrboard2 from wherever you decide to\nmount your spools.  You can use spool-remix-hanger.stl to mount\nthe spool to the wall while leaving room for the stepper motor cable.",
+                    "images": [
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_133944.jpg",
+                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170724_211042.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170726_134052.jpg"
+                    ]
                 },
                 {
                     "step": 3,
-                    "text": "Print out gearhead-remix-base.stl, gearhead-remix-clamp.stl,\nand gearhead-remix-gearbox.stl. (The photo also shows an early\nversion of bowden-block-4.stl, the bowden merge piece.)\n\n\nYou’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).\n\n\nFirst, install a pair of bearings into the base piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.\nNOTE 1:\nPrintrbot sells these,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.\nNOTE 2:\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.\n\n\nNow install the other pair of bearings into the gearbox piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.\n\n\nAttach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.\nYou probably want to use M302 P1 to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.\n\n\nNow attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment similar to this one.)\nInsert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)\n\n\nInstall the clamp piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The clamp\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.\nYou can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use M92 E127 to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder."
+                    "text": "<b>Foo</b>\nPrint out gearhead-remix-base.stl, gearhead-remix-clamp.stl,\nand gearhead-remix-gearbox.stl. (The photo also shows an early\nversion of bowden-block-4.stl, the bowden merge piece.)\n\n\nYou’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).\n\n\nFirst, install a pair of bearings into the base piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.\nNOTE 1:\nPrintrbot sells these,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.\nNOTE 2:\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.\n\n\nNow install the other pair of bearings into the gearbox piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.\n\n\nAttach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.\nYou probably want to use M302 P1 to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.\n\n\nNow attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment similar to this one.)\nInsert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)\n\n\nInstall the clamp piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The clamp\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.\nYou can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use M92 E127 to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder.",
+                    "images": [
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_133905.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_134043.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_141320.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_141721.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_143040.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_145756.jpg",
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170731_013846.jpg"
+                    ]
                 },
                 {
                     "step": 4,
-                    "text": "Print out bowden-block-4.stl and install (4)\nFilastruder/E3D “Embedded for plastic” 1.75mm Bowden Couplers.  (You could also use the 2-way or 3-way merge piece if\nyou prefer.)\nTo be continued…"
+                    "text": "<b>Foo</b>\nPrint out bowden-block-4.stl and install (4)\nFilastruder/E3D “Embedded for plastic” 1.75mm Bowden Couplers.  (You could also use the 2-way or 3-way merge piece if\nyou prefer.)\nTo be continued…",
+                    "images": [
+                        "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170730_191243.jpg"
+                    ]
                 },
                 {
                     "step": 5,
-                    "text": ""
+                    "text": "<b>Foo</b>\n"
                 },
                 {
                     "step": 6,
-                    "text": ""
+                    "text": "<b>Foo</b>\n"
                 },
                 {
                     "step": 7,
-                    "text": ""
+                    "text": "<b>Foo</b>\n"
                 }
             ],
             "relationships": [
@@ -224,7 +244,7 @@
                     "title": "Multimaterial community forum"
                 }
             ],
-            "updated": "2017-07-31T07:35:12.164Z"
+            "updated": "2017-07-31T07:54:42.300Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -324,5 +344,5 @@
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-31T07:35:12.164Z"
+    "updated": "2017-07-31T07:54:42.300Z"
 }
