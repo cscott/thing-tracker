@@ -13,7 +13,7 @@
         {
             "id": "3367036c-9556-4aa5-b3d4-02ff7dc592d1",
             "title": "Direct-drive multimaterial printing on a Printrbot",
-            "description": "A collection of parts used to implement direct-drive multimaterial printing on a Printrbot Simple Metal.  Should be generalizable to other models.  Printrbot extruders are used, and the <a href='https://github.com/cscott/extrudrboard2'>Extrudrboard2</a>.",
+            "description": "<p>This repository contains a collection of parts used to implement\ndirect-drive multimaterial printing on a <a href=\"http://printrbot.com\">Printrbot</a> Simple Metal.\nIt should be generalizable to other Printrbot models, and other\n3d printers, but we generally use Printrbot extruder designs\nand <a href=\"http://www.marlinfw.org/\">Marlin</a>‘s <a href=\"http://reprap.org/wiki/Printrboard\">Printrboard</a>/<a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a> support.  The basic\ndirect-drive multimaterial concept is due to <a href=\"http://roemotion.com\">Brian Roe</a>\n(<a href=\"https://twitter.com/MakerBrian\">@MakerBrian</a>).</p>\n<p>The direct-drive design uses the standard extruder directly above the\nhot end for precise no-lag filament control and compatibility with\nflexible filaments.  It is wired up to the extruder output on the\n<a href=\"http://reprap.org/wiki/Printrboard\">Printrboard</a> and controlled by Marlin as “Extruder 0”.</p>\n<p>We use a Printrbot <a href=\"https://printrbot.com/shop/gear-head-extruder-v2/\">Gear Head Extruder</a> for direct drive, using the\nfact that this extruder is self-loading: once filament is introduced\nabove the drive gears, the extruder will grab it and feed it through\nwithout manual intervention.  (We’re actually using the <a href=\"https://www.youmagine.com/designs/printrbot-gear-head-extruder\">beta version\nof the gear head extruder</a> which used a printed housing.)</p>\n<p>Above this direct-drive gear head extruder is a V-shaped merge adapter\nwhich accepts 1-4 bowden tubes containing different filament\nmaterials.  This is integrated with the housing of the gear head\nextruder to place the merge as close to the extruder input as\npossible.  This minimizes the distance that unsupported filament must\ntravel during filament changes, and thus (hopefully) prevents jams.</p>\n<p><img src=\"./imgs/IMG_20170723_222441.jpg\" style=\"float:right\" width=\"150\" align=\"right\"></p>\n<p>At the moment I’ve designed the merge as a single printed piece which\nfits into an 8mm hole on direct-drive extruder handle or body.  The\nidea is to make it easy to retrofit an existing gear-head extruder\nby simply drilling an 8mm pocket in the handle, although I don’t\nown one of the newer Aluminum Gear Head Extruders to fully test this.</p>\n<p>The bowden tubes from the merge piece run to individual bowden drives\nmounted on filament spools.  I’m using SPANNERHANDS’ excellent\n<a href=\"https://www.thingiverse.com/thing:2119644\">spool design</a> with a\nslight remix to move the PFTE coupler and mount an extruder where\nthe PFTE coupler used to attach.  The extruders connect to an\n<a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a> or <a href=\"https://github.com/cscott/extrudrboard2\">Extrudrboard2</a> and feed the filament from the\nspool into the bowden tube to direct it to the merge piece.\nTwo extruders are always driven simultaneously to move filament,\none on the spool and one at the print head, although during\nfilament change operations there may be times when no filament\nis actually in contact with the direct drive, and thus the\nspool extruders are working alone.</p>\n<p>The <a href=\"http://www.marlinfw.org/\">Marlin</a> firmware is modified to support this style of operation,\nbuilding on the <code>MK2_MULTIPLEXER</code> support upstreamed to support Prusa’s\n<a href=\"https://github.com/prusa3d/Original-Prusa-i3/issues/29\">Super Switch</a>.</p>\n<p><br clear=\"both\"></p>",
             "url": "https://github.com/cscott/3d-multimaterial",
             "downloadUrl": "https://github.com/cscott/3d-multimaterial/zipball/master",
             "authors": [
@@ -25,7 +25,7 @@
             ],
             "created": "2017-07-24T21:59:00-04:00",
             "licenses": [
-                "GPL3"
+                "GPL-2.0+"
             ],
             "thumbnailUrls": [
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg",
@@ -41,12 +41,10 @@
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/mount-stl/mount-1kg.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/mount-stl/mount-750g.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-lid2.stl.png",
+                "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-handle.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-base.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-clamp.stl.png",
                 "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/gearhead-remix-stl/gearhead-remix-gearbox.stl.png"
-            ],
-            "subject": [
-                "SUBJECT"
             ],
             "media": [
                 "PLA"
@@ -134,6 +132,14 @@
                     "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-lid2.stl.png"
                 },
                 {
+                    "partNumber": "3b",
+                    "description": "SPANNERHANDS spool WALL_MOUNT_v2_0 remix",
+                    "url": "https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-handle.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla",
+                    "thumbnailUrl": "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/spool-remix-stl/spool-remix-handle.stl.png"
+                },
+                {
                     "partNumber": "4",
                     "description": "Gear head extruder remix (OpenSCAD source)",
                     "url": "https://github.com/cscott/3d-multimaterial/raw/master/gearhead-remix.scad",
@@ -169,39 +175,56 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "Start by printing out a SPANNERHANDS spool for each bowden extruder you are going to use.  Use spool-remix-lid2.stl instead of the LID2 part. Attach the PTFE_COUPLER_v2_0.stl to spool-remix-lid2, and screw mount-1kg.stl to LID1 (where the PTFE_COUPLER part would normally go).  Attach your stepper and extruder to mount-1kg.",
-                    "images": [
-                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg",
-                        "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170724_211042.jpg"
-                    ]
+                    "text": "Start by printing out a SPANNERHANDS spool for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use spool-remix-lid2.stl instead of the\nstock LID2 part.  Mount the SPANNERHANDS PTFE_COUPLER_v2_0.stl\npart to spool-remix-lid2.stl.  We are going to mount our\nbowden extruder on LID1, where the PTFE_COUPLER part would\nnormally go.  Assemble the LID_Bracket, BASE_Bracket,\nand two CLASP_BRACKET_v2_0 parts; I printed these in a contrasting\ncolor.  Use two Glue_Joint parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings."
                 },
                 {
                     "step": 2,
-                    "text": "Print out our remixed version of the Printrbot gear head extruder, in three parts: base, clamp, and gearbox."
+                    "text": "Now print out mount-1kg.stl and attach it to the LID1 part of the\nspool, with four M3x10mm screws like all of the other SPANNERHANDS\nspool parts.  After it is attached to the spool you can mount the\nextruder, placing the mount between the extruder body and the stepper.\nI recommend M3x25mm screws here; some models of Printrbot extruder\nmight need some extra length to account for the mounting plate between\nthe extruder and stepper.\nYou can optionally use three M3x8mm screws to secure the bottom of\nthe extruder.  Some models of Printrbot extruder (for example, the\ninjection-molded plastic extruder) don’t have these mounting holes.\nThey are probably overkill for this use anyway.\n\n\nInsert a\nGroove mount 1.75mm Bowden coupler\nwhere the hotend would usually mount on the extruder.\n\n\nYou can route the wires for the stepper down the back of the spool and\nthrough the hinge.  You’ll probably need servo extension cables to\nreach your Extrudrboard/Extrudrboard2 from wherever you decide to\nmount your spools.  You can use spool-remix-hanger.stl to mount\nthe spool to the wall while leaving room for the stepper motor cable."
                 },
                 {
                     "step": 3,
-                    "text": "Print out the 2-way, 3-way, or 4-way bowden merge, and attach it to the top of the remixed gear head extruder."
+                    "text": "Print out gearhead-remix-base.stl, gearhead-remix-clamp.stl,\nand gearhead-remix-gearbox.stl. (The photo also shows an early\nversion of bowden-block-4.stl, the bowden merge piece.)\n\n\nYou’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).\n\n\nFirst, install a pair of bearings into the base piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.\nNOTE 1:\nPrintrbot sells these,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.\nNOTE 2:\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.\n\n\nNow install the other pair of bearings into the gearbox piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.\n\n\nAttach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.\nYou probably want to use M302 P1 to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.\n\n\nNow attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment similar to this one.)\nInsert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)\n\n\nInstall the clamp piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The clamp\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.\nYou can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use M92 E127 to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder."
+                },
+                {
+                    "step": 4,
+                    "text": "Print out bowden-block-4.stl and install (4)\nFilastruder/E3D “Embedded for plastic” 1.75mm Bowden Couplers.  (You could also use the 2-way or 3-way merge piece if\nyou prefer.)\nTo be continued…"
+                },
+                {
+                    "step": 5,
+                    "text": ""
+                },
+                {
+                    "step": 6,
+                    "text": ""
+                },
+                {
+                    "step": 7,
+                    "text": ""
                 }
             ],
             "relationships": [
                 {
                     "type": "reference",
                     "url": "https://github.com/cscott/extrudrboard2",
-                    "title": "Extrudrboard2"
+                    "title": "The Extrudrboard2 design allows connecting up to four multiplexed\nsteppers to a Printrboard."
                 },
                 {
                     "type": "reference",
                     "url": "https://www.thingiverse.com/thing:2119644",
-                    "title": "SPANNERHANDS spool system"
+                    "title": "SPANNERHANDS spool system."
                 },
                 {
                     "type": "reference",
-                    "url": "https://www.youmagine.com/designs/printrbot-gear-head-extruder",
-                    "title": "Printrbot gear head extruder"
+                    "url": "https://printrbot.com/shop/gear-head-extruder-v2/",
+                    "title": "Printrbot Gear Head Extruder."
+                },
+                {
+                    "type": "reference",
+                    "url": "http://forum.monstercafe.net/topic6.html",
+                    "title": "Multimaterial community forum"
                 }
             ],
-            "updated": "2017-07-27T03:42:54.793Z"
+            "updated": "2017-07-31T07:35:12.164Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -301,5 +324,5 @@
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-27T03:42:54.793Z"
+    "updated": "2017-07-31T07:35:12.164Z"
 }

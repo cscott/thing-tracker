@@ -6,6 +6,7 @@
 
 var argv = require('yargs')
     .option('file', { alias: 'f', describe: 'a JSON thing description' })
+    .option('readme', { alias: 'r', describe: 'a README.md with thing info.' })
     .option('base', { alias: 'b', describe: 'Base URL for thing-local paths.' })
     .demandOption(['file'], 'A thing description is required')
     .help()
@@ -17,7 +18,11 @@ var path = require('path');
 var rimraf = require('rimraf');
 var mkdirp = require('mkdirp');
 var cp = require('cp');
+
 var StlThumbnailer = require('node-stl-thumbnailer');
+var domino = require('domino');
+var marked = require('marked');
+var spdxParse = require('spdx-expression-parse');
 
 var trackerPath = path.join(__dirname, '..', 'tracker.json');
 var trackerSchema = require('./schema.json');
@@ -80,6 +85,104 @@ if (!baseURL) {
     process.exit(2);
 }
 if (!/\/$/.test(baseURL)) { baseURL += '/'; }
+
+// Fill in thing.json based on a README.
+
+var extractSectionHtml = function(doc, hSelect, reTest) {
+    var sectDoc = extractSectionDoc(doc, hSelect, reTest);
+    if (sectDoc) {
+        return stripWS(sectDoc.body.innerHTML);
+    }
+    return null;
+};
+
+var extractSectionDoc = function(doc, hSelect, reTest) {
+    var resultDoc = domino.createDocument('', true);
+    var matches = doc.querySelectorAll(hSelect);
+    for (var i=0; i<matches.length; i++) {
+        var m = matches[i];
+        if (reTest ? reTest.test(m.textContent) : true) {
+            var stop = Object.create(null);
+            for (var i = 1; i <= 6; i++) {
+                var h = 'H' + i;
+                stop[h] = true;
+                if (h === m.nodeName) { break; }
+            }
+            for (var n = m.nextSibling; n && !stop[n.nodeName]; n = n.nextSibling) {
+                resultDoc.body.appendChild(resultDoc.importNode(n, true));
+            }
+            return resultDoc;
+        }
+    }
+    return null; // no match
+}
+
+var isValidSpdx = function(txt) {
+    try {
+        spdxParse(txt);
+        return true;
+    } catch (e) {
+        return false;
+    }
+};
+
+var stripWS = function(s) {
+    return s.replace(/(^\s+)|(\s+$)/g, '');
+};
+
+if (argv.readme) {
+    marked.setOptions({ smartypants: true });
+    var doc = domino.createDocument(
+        marked(fs.readFileSync(argv.readme, 'utf8')), true
+    );
+    // description
+    var desc = extractSectionHtml(doc, 'h2#description');
+    if (desc !== null) { thing.description = desc; }
+    // license
+    var licenseDoc = extractSectionDoc(doc, 'h2#license');
+    if (licenseDoc) {
+        var l = [];
+        Array.from(licenseDoc.querySelectorAll('a[href]')).forEach(function(a) {
+            var m = /^https?:\/\/spdx\.org\/licenses\/(.*)\.html$/.exec(a.href);
+            if (a.textContent && isValidSpdx(a.textContent)) {
+                l.push(a.textContent);
+            } else if (m && isValidSpdx(m[1])) {
+                l.push(m[1]);
+            }
+        });
+        thing.licenses = l;
+    }
+    // instructions
+    var instructDoc = extractSectionDoc(doc, 'h2#instructions');
+    if (instructDoc) {
+        var i = [];
+        Array.from(instructDoc.querySelectorAll('h3')).forEach(function(h3) {
+            var chunk = extractSectionDoc(doc, 'h3#' + h3.id);
+            i.push({
+                step: i.length + 1,
+                text: stripWS(chunk.body.textContent)
+                // XXX images
+            });
+        });
+        thing.instructions = i;
+    }
+    // "related" / "relationships"
+    var relatedDoc = extractSectionDoc(doc, 'h2#related');
+    if (relatedDoc) {
+        var r = [];
+        Array.from(relatedDoc.querySelectorAll('li')).forEach(function(li) {
+            var a = li.querySelectorAll('a');
+            if (a.length === 1) {
+                r.push({
+                    type: "reference",
+                    url: a[0].href,
+                    title: stripWS(li.textContent)
+                });
+            }
+        });
+        thing.relationships = r;
+    }
+}
 
 // Adjust links to BOM
 (thing.billOfMaterials || []).forEach(function(bom) {
