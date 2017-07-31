@@ -158,6 +158,7 @@ if (argv.readme) {
         var i = [];
         Array.from(instructDoc.querySelectorAll('h3')).forEach(function(h3) {
             var chunk = extractSectionDoc(doc, 'h3#' + h3.id);
+            var title = h3.textContent.replace(/Step\s+\d+[:.]?/, '');
             var images = [];
             Array.from(chunk.querySelectorAll('img')).forEach(function(img) {
                 var src = img.getAttribute('src');
@@ -167,7 +168,7 @@ if (argv.readme) {
             });
             i.push({
                 step: i.length + 1,
-                text: stripWS(chunk.body.textContent),
+                text: '<h4>'+stripWS(title)+'</h4>\n' + stripWS(chunk.body.textContent),
                 images: images.length ? images : undefined
             });
         });
