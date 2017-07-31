@@ -249,7 +249,7 @@
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
             "title": "Extrudrboard2",
-            "description": "Proposed revision of Printrbot Extrudrboard for multimaterial printing",
+            "description": "<p>The latest revision of the <a href=\"http://reprap.org/wiki/Printrboard\">Printrboard</a> (REV F6) is mildly incompatible\nwith the original <a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a>,\nsince the HOTEND A signal used by the Extrudrboard was disconnected\nand used to provide an extruder fan output.</p>\n<p>Also, multimaterial printing doesn’t actually need all of the extra\nhotend and thermistor inputs.</p>\n<p>This repo contains a proposed “Extrudrboard2” which is compatible with\nPrintrboard REV F6 and provides up to four additional stepper outputs,\nused for multimaterial bowden extruders.  The original Printrboard\nextruder stepper is used for the direct drive just before the hotend,\nand these additional Extrudrboard outputs are multiplexed and used for\nthe individual filament options.</p>\n<p>As a bonus, I’ve thrown in a FAN2 output for owners of REV F5 and\nearlier Printrboards, which adds an extruder fan output which works\nidentically to that on the REV F6 Printrboard.</p>\n<p>The multiplexing scheme here is inspired by the “<a href=\"https://github.com/prusa3d/Original-Prusa-i3/issues/29\">Super Switch</a>“ of\nPrusa, and in fact basically the same <a href=\"http://www.marlinfw.org/\">Marlin</a> code (<code>MK2_MULTIPLEXER</code>)\ncan be used.  One wrinkle is that the Printrboard extruder output\n(we’ll call it E0) wants to be a <a href=\"https://printrbot.com/shop/gear-head-extruder-v2/\">Gear Head Extruder</a> with 127\nsteps/mm, while the individual bowden drivers (E1-E4, driven by the\nExtrudrboard2) may be the lower cost 96 steps/mm <a href=\"https://printrbot.com/shop/printrbot-alu-extruder-v2/\">Alu Extruder</a>s –\nor even the short-lived injection-molded plastic extruder.  So some\nsoftware cleverness is needed to allow multiplexing different\nextruders with potentially different steps/mm rates.</p>\n<p>There are two versions of the board here.  The <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf\"><code>Extrudrboard2-thunk.sch</code></a>\nfiles are an initial\nprototype that allows you to connect two original Extrudrboards to the\nPrintrboard using the new multiplexing signal scheme.  It uses some\nrandom logic ICs for the multiplexer that I just happened to have in\nmy toolbox.  There was a three-unit minimum order, so I’ve got a couple extra.  You\ncould also order this from <a href=\"https://oshpark.com\">OSH Park</a> as shared project\n<a href=\"https://oshpark.com/shared_projects/wLrvnUeh\">wLrvnUeh</a> – warning,\nboards are not yet tested!</p>\n<p>If Printrbot decided to actually adopt this “project” as a “product”,\nthey’d want something more like <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf\"><code>Extrudrboard2.sch</code></a>, which integrates the\nfour stepper drivers from the two old extrudrboards into a single new\nboard.  I actually reused as much as possible of the original\nExtrudrboard schematic, components, and component packages, so this\nshould be highly compatible with whatever manufacturing process\nPrintrbot had for the original Extrudrboard.</p>",
             "url": "https://github.com/cscott/extrudrboard2",
             "downloadUrl": "https://github.com/cscott/extrudrboard2/zipball/master",
             "authors": [
@@ -261,7 +261,7 @@
             ],
             "created": "2017-07-24T21:59:00-04:00",
             "licenses": [
-                "GPL3"
+                "CC-BY-SA-3.0"
             ],
             "thumbnailUrls": [
                 "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png",
@@ -325,24 +325,45 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "If you have existing Extrudrboards you wish to upgrade to the new Extrudrboard2 functionality, use 'Extrudrboard2-thunk' with 1 or 2 original Extrudrboards.  If you are making new boards from scratch, use 'Extrudrboard2'."
+                    "text": "<b>Choose your build</b><br>\n<p>If you have existing <a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a>s you wish to upgrade to the new\nExtrudrboard2 functionality, use <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf\"><code>Extrudrboard2-thunk.sch</code></a> with 1 or\n2 original Extrudrboards connected.  If you are making new boards from\nscratch, use <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf\"><code>Extrudrboard2.sch</code></a>.</p>"
+                },
+                {
+                    "step": 2,
+                    "text": "<b>Assembling Extrudrboard2-thunk</b><br>"
+                },
+                {
+                    "step": 3,
+                    "text": "<b>Wiring Extrudrboard2-thunk</b><br>"
+                },
+                {
+                    "step": 4,
+                    "text": "<b>Assembling Extrudrboard2</b><br>"
+                },
+                {
+                    "step": 5,
+                    "text": "<b>Wiring Extrudrboard2</b><br>"
                 }
             ],
             "relationships": [
                 {
                     "type": "reference",
-                    "url": "https://github.com/Printrbot/printrboard",
-                    "title": "Original Printrboard and Extrudrboard"
+                    "url": "http://forum.monstercafe.net/topic5.html",
+                    "title": "Forum discussion for this project"
                 },
                 {
                     "type": "reference",
-                    "url": "http://forum.monstercafe.net/topic5.html",
-                    "title": "Forum discussion of Extrudrboard2"
+                    "url": "https://github.com/cscott/3d-multimaterial",
+                    "title": "Multimaterial project"
+                },
+                {
+                    "type": "reference",
+                    "url": "https://github.com/Printrbot/printrboard",
+                    "title": "Repo for original Printrboard/Extruderboard"
                 }
             ],
-            "updated": "2017-07-25T16:55:15.755Z"
+            "updated": "2017-07-31T18:21:17.249Z"
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-31T16:26:01.503Z"
+    "updated": "2017-07-31T18:21:17.249Z"
 }
