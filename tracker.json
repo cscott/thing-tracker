@@ -175,7 +175,7 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "<b>Build spools</b><br>\n<p></p>\n<p>Start by printing out a <a href=\"https://www.thingiverse.com/thing:2119644\">SPANNERHANDS spool</a> for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a> instead of the\nstock <code>LID2</code> part.  Mount the SPANNERHANDS <code>PTFE_COUPLER_v2_0.stl</code>\npart to <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a>.  We are going to mount our\nbowden extruder on <code>LID1</code>, where the <code>PTFE_COUPLER</code> part would\nnormally go.  Assemble the <code>LID_Bracket</code>, <code>BASE_Bracket</code>,\nand two <code>CLASP_BRACKET_v2_0</code> parts; I printed these in a contrasting\ncolor.  Use two <code>Glue_Joint</code> parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings.</p>\n<p></p>",
+                    "text": "<b>Build spools</b><br>\n<p></p>\n<p>Start by printing out a <a href=\"https://www.thingiverse.com/thing:2119644\">SPANNERHANDS spool</a> for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a> instead of the\nstock <code>LID2</code> part.  Mount the SPANNERHANDS <code>PTFE_COUPLER_v2_0.stl</code>\npart to <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a>.  We are going to mount our\nbowden extruder on <code>LID1</code>, where the <code>PTFE_COUPLER</code> part would\nnormally go.  Assemble the <code>LID_Bracket</code>, <code>BASE_Bracket</code>,\nand two <code>CLASP_BRACKET_v2_0</code> parts; I printed these in a contrasting\ncolor.  Use two <code>Glue_Joint</code> parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings.  I use the remix at\n<a href=\"https://www.thingiverse.com/thing:2372633\">thing:2372633</a> to fit my\n32mm core diameter spools; I didn’t need to scale that in any way.</p>\n<p></p>",
                     "images": [
                         "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg"
                     ]
@@ -191,7 +191,7 @@
                 },
                 {
                     "step": 3,
-                    "text": "<b>Assemble gear head direct-drive extruder</b><br>\n<p></p>\n<p>Print out <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-base.stl\"><code>gearhead-remix-base.stl</code></a>, <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-clamp.stl\"><code>gearhead-remix-clamp.stl</code></a>,\nand <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-gearbox.stl\"><code>gearhead-remix-gearbox.stl</code></a>. (The photo also shows an early\nversion of <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-4.stl\"><code>bowden-block-4.stl</code></a>, the bowden merge piece.)</p>\n<p>\n</p>\n<p>You’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).</p>\n<p>\n</p>\n<p>First, install a pair of bearings into the <code>base</code> piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.</p>\n<p><strong>NOTE 1:</strong>\nPrintrbot <a href=\"https://printrbot.com/shop/gear-head-extruder-gear-set/\">sells these</a>,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.</p>\n<p><strong>NOTE 2:</strong>\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.</p>\n<p>\n</p>\n<p>Now install the other pair of bearings into the <code>gearbox</code> piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.</p>\n<p>\n</p>\n<p>Attach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.</p>\n<p>You probably want to use <code>M302 P1</code> to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.</p>\n<p>\n</p>\n<p>Now attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment <a href=\"https://www.thingiverse.com/thing:398212\">similar to this one</a>.)</p>\n<p>Insert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)</p>\n<p>\n</p>\n<p>Install the <code>clamp</code> piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The <code>clamp</code>\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.</p>\n<p>You can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use <code>M92 E127</code> to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder.</p>\n<p></p>",
+                    "text": "<b>Assemble gear head direct-drive extruder</b><br>\n<p></p>\n<p>Print out <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-base.stl\"><code>gearhead-remix-base.stl</code></a>, <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-clamp.stl\"><code>gearhead-remix-clamp.stl</code></a>,\nand <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-gearbox.stl\"><code>gearhead-remix-gearbox.stl</code></a>. (The photo also shows an early\nversion of <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-4.stl\"><code>bowden-block-4.stl</code></a>, the bowden merge piece.)</p>\n<p>\n</p>\n<p>You’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).</p>\n<p>\n</p>\n<p>First, install a pair of bearings into the <code>base</code> piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.</p>\n<p><strong>NOTE 1:</strong>\nPrintrbot <a href=\"https://printrbot.com/shop/gear-head-extruder-gear-set/\">sells these</a>,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.</p>\n<p><strong>NOTE 2:</strong>\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.</p>\n<p>\n</p>\n<p>Now install the other pair of bearings into the <code>gearbox</code> piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.</p>\n<p>\n</p>\n<p>Attach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.</p>\n<p>You probably want to use <code>M302 P1</code> to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.</p>\n<p>\n</p>\n<p>Now attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment <a href=\"https://www.thingiverse.com/thing:1539380\">similar to this one</a>.)</p>\n<p>Insert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)</p>\n<p>\n</p>\n<p>Install the <code>clamp</code> piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The <code>clamp</code>\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.</p>\n<p>You can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use <code>M92 E127</code> to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder.</p>\n<p></p>",
                     "images": [
                         "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_133905.jpg",
                         "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_134043.jpg",
@@ -244,12 +244,12 @@
                     "title": "Multimaterial community forum"
                 }
             ],
-            "updated": "2017-07-31T16:26:01.503Z"
+            "updated": "2017-08-02T17:00:04.019Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
             "title": "Extrudrboard2",
-            "description": "<p>The latest revision of the <a href=\"http://reprap.org/wiki/Printrboard\">Printrboard</a> (REV F6) is mildly incompatible\nwith the original <a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a>,\nsince the HOTEND A signal used by the Extrudrboard was disconnected\nand used to provide an extruder fan output.</p>\n<p>Also, multimaterial printing doesn’t actually need all of the extra\nhotend and thermistor inputs.</p>\n<p>This repo contains a proposed “Extrudrboard2” which is compatible with\nPrintrboard REV F6 and provides up to four additional stepper outputs,\nused for multimaterial bowden extruders.  The original Printrboard\nextruder stepper is used for the direct drive just before the hotend,\nand these additional Extrudrboard outputs are multiplexed and used for\nthe individual filament options.</p>\n<p>As a bonus, I’ve thrown in a FAN2 output for owners of REV F5 and\nearlier Printrboards, which adds an extruder fan output which works\nidentically to that on the REV F6 Printrboard.</p>\n<p>The multiplexing scheme here is inspired by the “<a href=\"https://github.com/prusa3d/Original-Prusa-i3/issues/29\">Super Switch</a>“ of\nPrusa, and in fact basically the same <a href=\"http://www.marlinfw.org/\">Marlin</a> code (<code>MK2_MULTIPLEXER</code>)\ncan be used.  One wrinkle is that the Printrboard extruder output\n(we’ll call it E0) wants to be a <a href=\"https://printrbot.com/shop/gear-head-extruder-v2/\">Gear Head Extruder</a> with 127\nsteps/mm, while the individual bowden drivers (E1-E4, driven by the\nExtrudrboard2) may be the lower cost 96 steps/mm <a href=\"https://printrbot.com/shop/printrbot-alu-extruder-v2/\">Alu Extruder</a>s –\nor even the short-lived injection-molded plastic extruder.  So some\nsoftware cleverness is needed to allow multiplexing different\nextruders with potentially different steps/mm rates.</p>\n<p>There are two versions of the board here.  The <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf\"><code>Extrudrboard2-thunk.sch</code></a>\nfiles are an initial\nprototype that allows you to connect two original Extrudrboards to the\nPrintrboard using the new multiplexing signal scheme.  It uses some\nrandom logic ICs for the multiplexer that I just happened to have in\nmy toolbox.  There was a three-unit minimum order, so I’ve got a couple extra.  You\ncould also order this from <a href=\"https://oshpark.com\">OSH Park</a> as shared project\n<a href=\"https://oshpark.com/shared_projects/wLrvnUeh\">wLrvnUeh</a> – warning,\nboards are not yet tested!</p>\n<p>If Printrbot decided to actually adopt this “project” as a “product”,\nthey’d want something more like <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf\"><code>Extrudrboard2.sch</code></a>, which integrates the\nfour stepper drivers from the two old extrudrboards into a single new\nboard.  I actually reused as much as possible of the original\nExtrudrboard schematic, components, and component packages, so this\nshould be highly compatible with whatever manufacturing process\nPrintrbot had for the original Extrudrboard.</p>",
+            "description": "<p>The latest revision of the <a href=\"http://reprap.org/wiki/Printrboard\">Printrboard</a> (REV F6) is mildly incompatible\nwith the original <a href=\"http://reprap.org/wiki/Adding_more_extruders#RAMPS_using_ExtrudrBoard\">Extrudrboard</a>,\nsince the HOTEND A signal used by the Extrudrboard was disconnected\nand used to provide an extruder fan output.</p>\n<p>Also, multimaterial printing doesn’t actually need all of the extra\nhotend and thermistor inputs.</p>\n<p>This repo contains a proposed “Extrudrboard2” which is compatible with\nPrintrboard REV F6 and provides up to four additional stepper outputs,\nused for multimaterial bowden extruders.  The original Printrboard\nextruder stepper is used for the direct drive just before the hotend,\nand these additional Extrudrboard outputs are multiplexed and used for\nthe individual filament options.</p>\n<p>As a bonus, I’ve thrown in a FAN2 output for owners of REV F5 and\nearlier Printrboards, which adds an extruder fan output which works\nidentically to that on the REV F6 Printrboard.</p>\n<p>The multiplexing scheme here is inspired by the “<a href=\"https://github.com/prusa3d/Original-Prusa-i3/issues/29\">Super Switch</a>“ of\nPrusa, and in fact basically the same <a href=\"http://www.marlinfw.org/\">Marlin</a> code (<code>MK2_MULTIPLEXER</code>)\ncan be used.  One wrinkle is that the Printrboard extruder output\n(we’ll call it E0) wants to be a <a href=\"https://printrbot.com/shop/gear-head-extruder-v2/\">Gear Head Extruder</a> with 127\nsteps/mm, while the individual bowden drivers (E1-E4, driven by the\nExtrudrboard2) may be the lower cost 96 steps/mm <a href=\"https://printrbot.com/shop/printrbot-alu-extruder-v2/\">Alu Extruder</a>s –\nor even the short-lived injection-molded plastic extruder.  So some\nsoftware cleverness is needed to allow multiplexing different\nextruders with potentially different steps/mm rates.</p>\n<p></p>\n<p>There are two versions of the board here.  The <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf\"><code>Extrudrboard2-thunk.sch</code></a>\nfiles are an initial\nprototype that allows you to connect two original Extrudrboards to the\nPrintrboard using the new multiplexing signal scheme.  It uses some\nrandom logic ICs for the multiplexer that I just happened to have in\nmy toolbox.  There was a three-unit minimum order, so I’ve got a couple extra.  You\ncould also order this from <a href=\"https://oshpark.com\">OSH Park</a> as shared project\n<a href=\"https://oshpark.com/shared_projects/wLrvnUeh\">wLrvnUeh</a> – warning,\nboards are not yet tested!</p>\n<p>If Printrbot decided to actually adopt this “project” as a “product”,\nthey’d want something more like <a href=\"https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf\"><code>Extrudrboard2.sch</code></a>, which integrates the\nfour stepper drivers from the two old extrudrboards into a single new\nboard.  I actually reused as much as possible of the original\nExtrudrboard schematic, components, and component packages, so this\nshould be highly compatible with whatever manufacturing process\nPrintrbot had for the original Extrudrboard.</p>\n<p></p>",
             "url": "https://github.com/cscott/extrudrboard2",
             "downloadUrl": "https://github.com/cscott/extrudrboard2/zipball/master",
             "authors": [
@@ -264,8 +264,13 @@
                 "CC-BY-SA-3.0"
             ],
             "thumbnailUrls": [
-                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png",
-                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2-thunk.sch.png"
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2.sch.png",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.sch.png",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.brd-front.jpg",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.brd-back.jpg",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.populated.jpg",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.wiring.jpg",
+                "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard.wiring.jpg"
             ],
             "tags": [
                 "printrbot",
@@ -279,7 +284,7 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch",
                     "type": "source",
                     "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2.sch.png"
                 },
                 {
                     "partNumber": "2",
@@ -287,15 +292,14 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.sch.pdf",
                     "type": "generated",
                     "mimetype": "application/pdf",
-                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2.sch.png"
                 },
                 {
                     "partNumber": "3",
                     "description": "Extrudrboard2 pcb",
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2.brd",
                     "type": "source",
-                    "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "Extrudrboard2.brd.pdf"
+                    "mimetype": "application/x-eagle"
                 },
                 {
                     "partNumber": "4",
@@ -303,7 +307,7 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch",
                     "type": "source",
                     "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2.sch.png"
                 },
                 {
                     "partNumber": "5",
@@ -311,7 +315,7 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.sch.pdf",
                     "type": "generated",
                     "mimetype": "application/pdf",
-                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/Extrudrboard2.sch.png"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2.sch.png"
                 },
                 {
                     "partNumber": "6",
@@ -319,7 +323,7 @@
                     "url": "https://github.com/cscott/extrudrboard2/raw/master/Extrudrboard2-thunk.brd",
                     "type": "source",
                     "mimetype": "application/x-eagle",
-                    "thumbnailUrl": "Extrudrboard2.brd.pdf"
+                    "thumbnailUrl": "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.brd-front.jpg"
                 }
             ],
             "instructions": [
@@ -329,19 +333,30 @@
                 },
                 {
                     "step": 2,
-                    "text": "<b>Assembling Extrudrboard2-thunk</b><br>"
+                    "text": "<b>Assembling Extrudrboard2-thunk</b><br>\n<p></p>\n<p>Populating the PCB is straight-forward.  Three 7x2 0.1” male headers get\nsoldered in for “Printrboard”, “Extrudrboard #1” and “Extrudrboard #2”.\nAdd three bypass caps.  Values are somewhat flexible, but I used one 22uF\n(primarily to decouple <code>FILWIDTH</code>) and two 0.1uF caps (to decouple the\nlogic ICs).  Solder in the 74HC138 and 74HC04; use DIP sockets if you like.\nNote that the 74HC238 is actually a better fit here, but I just happened\nto have a ‘138 in my toolbox so I added an inverter chip to make it work.\nLikewise, you should feel free to use the LS or other variant of the logic\nchips if you prefer: we’re running on 5V and low speed, so any version\nwill do.</p>\n<p></p>",
+                    "images": [
+                        "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.populated.jpg"
+                    ]
                 },
                 {
                     "step": 3,
-                    "text": "<b>Wiring Extrudrboard2-thunk</b><br>"
+                    "text": "<b>Wiring Extrudrboard2-thunk</b><br>\n<p></p>\n<p>Use three 2x7 header cables to connect the Printrboard and two Extrudrboards\nas indicated.  The tricky part is keeping pin 1 on the cables oriented\ncorrectly, especially as neither the Printrboard nor the Extrudrboards clearly\nmark pin 1.</p>\n<p>\n</p>\n<p>You can connect a hotend fan to the HOTEND A output of Extrudrboard #1.\nPins 1 and 2 are shorted together, as are pins 3 and 4.  You probably\nwant to use a 1x2 female header on the center two pins.  I’ve marked\nthe polarity.</p>\n<p></p>",
+                    "images": [
+                        "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard2-thunk.wiring.jpg",
+                        "thumbnails/737eb982-b77f-43e0-ae38-4fc30f3e3170/imgs/Extrudrboard.wiring.jpg"
+                    ]
                 },
                 {
                     "step": 4,
-                    "text": "<b>Assembling Extrudrboard2</b><br>"
+                    "text": "<b>Additional features of Extrudrboard2-thunk</b><br>\n<p>The <code>FILWIDTH</code> header is intended to support the Objects with Intelligence\n<a href=\"http://objectswithintelligence.weebly.com/store.html\">Filament Width Sensor</a>\n(<a href=\"https://www.thingiverse.com/thing:454584\">thing:454584</a>), at the default\npin assignment used in upstream Marlin.  This is experimental: my\n<a href=\"https://github.com/cscott/3d-multimaterial\">multimaterial merge project</a>\nusing the Extrudrboard2 doesn’t have a place for this, and at the moment\nI believe that minimizing distance between the merge and the gear head\ndrive is essential, so if I wanted to use it I’d likely have to significantly\nre-engineer the filament width sensor to minimize the distance it would\nadd to the unsupported filament path.</p>\n<p>The <code>EXPANSION</code> header brings all of the unused signals from both the\nPrintrboard EXP1 connector and the two Extrudrboard connectors into a\nconvenient place.  The 3 of the 4 HOTEND MOSFETs from the Extrudrboards\nare unused (one is connected as an extruder fan output); it should be\nconvenient to use this header to wire them up to an unused signal from\nEXP1 in order to drive some auxiliary load: extra lights, heaters, etc.</p>"
                 },
                 {
                     "step": 5,
-                    "text": "<b>Wiring Extrudrboard2</b><br>"
+                    "text": "<b>Assembling Extrudrboard2</b><br>\n<p>TBD…</p>"
+                },
+                {
+                    "step": 6,
+                    "text": "<b>Wiring Extrudrboard2</b><br>\n<p>TBD…</p>"
                 }
             ],
             "relationships": [
@@ -361,9 +376,9 @@
                     "title": "Repo for original Printrboard/Extruderboard"
                 }
             ],
-            "updated": "2017-07-31T18:21:17.249Z"
+            "updated": "2017-08-02T17:02:27.877Z"
         }
     ],
     "thingsCount": 2,
-    "updated": "2017-07-31T18:21:17.249Z"
+    "updated": "2017-08-02T17:02:27.877Z"
 }
