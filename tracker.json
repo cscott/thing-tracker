@@ -175,7 +175,7 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "<b>Build spools</b><br>\n<p></p>\n<p>Start by printing out a <a href=\"https://www.thingiverse.com/thing:2119644\">SPANNERHANDS spool</a> for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a> instead of the\nstock <code>LID2</code> part.  Mount the SPANNERHANDS <code>PTFE_COUPLER_v2_0.stl</code>\npart to <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a>.  We are going to mount our\nbowden extruder on <code>LID1</code>, where the <code>PTFE_COUPLER</code> part would\nnormally go.  Assemble the <code>LID_Bracket</code>, <code>BASE_Bracket</code>,\nand two <code>CLASP_BRACKET_v2_0</code> parts; I printed these in a contrasting\ncolor.  Use two <code>Glue_Joint</code> parts to assemble the lid and base halves.\nI found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings.  I use the remix at\n<a href=\"https://www.thingiverse.com/thing:2372633\">thing:2372633</a> to fit my\n32mm core diameter spools; I didn’t need to scale that in any way.</p>\n<p></p>",
+                    "text": "<b>Build spools</b><br>\n<p></p>\n<p>Start by printing out a <a href=\"https://www.thingiverse.com/thing:2119644\">SPANNERHANDS spool</a> for each filament bowden\nextruder you are going to use. I’m using the “v5 1kg” variant, but\nwith a little effort you could adapt these instructions to one of the\nother spool variants.  Use <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a> instead of the\nstock <code>LID2</code> part.  Mount the SPANNERHANDS <code>PTFE_COUPLER_v2_0.stl</code>\npart to <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/spool-remix-stl/spool-remix-lid2.stl\"><code>spool-remix-lid2.stl</code></a>.  We are going to mount our\nbowden extruder on <code>LID1</code>, where the <code>PTFE_COUPLER</code> part would\nnormally go.  Assemble the <code>LID_Bracket</code>, <code>BASE_Bracket</code>,\nand two <code>CLASP_BRACKET_v2_0</code> parts; I printed these in a contrasting\ncolor.</p>\n<p>Use two <code>Glue_Joint</code> parts to assemble the lid and base halves;\nI recommend gluing both at once with the parts assembled into a complete\ncircle so you can ensure that the gap between top and bottom is not\ntoo large as you glue them up.  Otherwise you tend to get top and bottom\nhalves which are ~178° of arc instead of 180°, and when you finally put\ntop and bottom together you get a pacman which won’t close completely.\nYou can scale up the Z axis of the SPANNERHANDS <code>Flex_Seal</code> parts and\nthen trim them into a wedge to kludge around the problem if this happens.</p>\n<p>I found the stock spool bearing mounts a little too tight, so I printed\nthe 50mm spool at 102% to fit my 52mm-core diameter spools with the right\nfit for the bearings.  I use the remix at\n<a href=\"https://www.thingiverse.com/thing:2372633\">thing:2372633</a> to fit my\n32mm core diameter spools; I didn’t need to scale that in any way.</p>\n<p></p>",
                     "images": [
                         "thumbnails/3367036c-9556-4aa5-b3d4-02ff7dc592d1/imgs/IMG_20170726_134009.jpg"
                     ]
@@ -191,7 +191,7 @@
                 },
                 {
                     "step": 3,
-                    "text": "<b>Assemble gear head direct-drive extruder</b><br>\n<p></p>\n<p>Print out <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-base.stl\"><code>gearhead-remix-base.stl</code></a>, <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-clamp.stl\"><code>gearhead-remix-clamp.stl</code></a>,\nand <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-gearbox.stl\"><code>gearhead-remix-gearbox.stl</code></a>. (The photo also shows an early\nversion of <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-4.stl\"><code>bowden-block-4.stl</code></a>, the bowden merge piece.)</p>\n<p>\n</p>\n<p>You’ll also need (4) [5x8x2.5 mm ball bearings] (or just three; see\nnote 2 below).</p>\n<p>\n</p>\n<p>First, install a pair of bearings into the <code>base</code> piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.</p>\n<p><strong>NOTE 1:</strong>\nPrintrbot <a href=\"https://printrbot.com/shop/gear-head-extruder-gear-set/\">sells these</a>,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.</p>\n<p><strong>NOTE 2:</strong>\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.</p>\n<p>\n</p>\n<p>Now install the other pair of bearings into the <code>gearbox</code> piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.</p>\n<p>\n</p>\n<p>Attach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.</p>\n<p>You probably want to use <code>M302 P1</code> to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.</p>\n<p>\n</p>\n<p>Now attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment <a href=\"https://www.thingiverse.com/thing:1539380\">similar to this one</a>.)</p>\n<p>Insert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)</p>\n<p>\n</p>\n<p>Install the <code>clamp</code> piece using two M3x25mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  The <code>clamp</code>\nis secured to the Y-axis using another M3x10mm screw and M3 nut into its\nbottom.</p>\n<p>You can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use <code>M92 E127</code> to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder.</p>\n<p></p>",
+                    "text": "<b>Assemble gear head direct-drive extruder</b><br>\n<p></p>\n<p>Print out <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-base.stl\"><code>gearhead-remix-base.stl</code></a>, <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-clamp.stl\"><code>gearhead-remix-clamp.stl</code></a>,\nand <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/gearhead-remix-stl/gearhead-remix-gearbox.stl\"><code>gearhead-remix-gearbox.stl</code></a>. (The photo also shows an early\nversion of <a href=\"https://github.com/cscott/3d-multimaterial/blob/master/bowden-stl/bowden-block-4.stl\"><code>bowden-block-4.stl</code></a>, the bowden merge piece.)</p>\n<p>\n</p>\n<p>You’ll also need (4) <a href=\"https://amazon.com/gp/product/B00ZHST8NU/\">5x8x2.5mm ball bearings</a> (or just three; see\nnote 2 below).</p>\n<p>\n</p>\n<p>First, install a pair of bearings into the <code>base</code> piece, and then install\nthe Printrbot Gear Head Extruder Gear Set into the bearings.</p>\n<p><strong>NOTE 1:</strong>\nPrintrbot <a href=\"https://printrbot.com/shop/gear-head-extruder-gear-set/\">sells these</a>,\nbut the pair that I have came from the Beta program for the Gear Head Extruder.\nIt’s possible the production gear set differs from the beta gears.</p>\n<p><strong>NOTE 2:</strong>\nPrintrbot’s original instructions stated that the rear stepper motor\nbearing (the bearing behind the hollow gear you just installed) is\noptional.  But if you’re buying bearings, no reason to pinch pennies.</p>\n<p><strong>NOTE 3:</strong>\nYou may want to try <a href=\"https://www.thingiverse.com/walter/about\">walter</a>‘s\n<a href=\"https://www.thingiverse.com/thing:1052966\">remix of the gear head extruder</a>.\nIt appears to use the same Printrbot gear set and bearings—but again,\nI’m not certain whether production gears differ from beta gears, and if so\nwhich walter used.  Some modifications will be necessary to adapt his\nremix to Printrbot bottom-mounting holes, but maybe you don’t need those.</p>\n<p>\n</p>\n<p>Now install the other pair of bearings into the <code>gearbox</code> piece, and\nbolt it to the base using (2) M3x20mm screws and (2) M3 nuts, sandwiching\nthe gears between them.  Before closing things up, align the set screw in\nthe left-hand gear with the channel in the base; this will allow you to\ninsert an allen wrench to tighten this gear onto the stepper shaft.</p>\n<p>\n</p>\n<p>Attach the assembled gear box to the stepper.  Ensure the flat on the stepper\nshaft is aligned with the allen wrench channel.  Use (2) M3x10mm screws in\nthe top holes to attach the gear box to the stepper, and then tighten the\nset screw to secure the drive gear to the stepper shaft.</p>\n<p>You probably want to use <code>M302 P1</code> to allow cold extrudes, then hook up\nyour stepper at this point and do a test extrusion w/o filament or hot end\nin order to check that the gears turn smoothly without slipping or grinding.</p>\n<p>\n</p>\n<p>Now attach the extruder to the Y-axis of your printer using (2) M3x10mm\nscrews through the bottom mounting holes into (2) M3 nuts in the slots\nprovided.  (I’m using M3x12mm screws because I have an extra 3mm aluminum\nplate mounted to my Y-axis, to support a previous dual-extruder\nexperiment <a href=\"https://www.thingiverse.com/thing:1539380\">similar to this one</a>.)</p>\n<p>Insert your hot end, and ensure it is snug and flush to the bottom surface\nfof the extruder as shown in the picture.  Any gap here will allow flexible\ncoil to kink and coil into the gap, eventually pushing your hot end off in\nthe middle of a print.  (This is the voice of experience speaking.)</p>\n<p>\n</p>\n<p>Install the <code>clamp</code> piece using two M3x22mm screws into the stepper.\nThere is a ridge on the clamp piece that should fit into the ring at\nthe top of your hot end and keep it from slipping downward.  Be\ncareful of the screw length here: if the screw is too long it will\nbottom out in the blind mounting hole on the stepper and not bend the\nPLA clamp piece enough to properly grip the hotend.  (Again, the voice\nof experience.)  The <code>clamp</code> is secured to the Y-axis using another\nM3x10mm screw and M3 nut into its bottom.</p>\n<p>You can do a test print, feeding filament through the hole in\nthe top of the remixed gear head extruder, to make sure everything\nis working correctly to this point.  Be sure to use <code>M92 E127</code> to\nreset your extruder steps/mm if you weren’t previously using a\ngear head extruder.</p>\n<p></p>",
                     "images": [
                         "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_133905.jpg",
                         "https://github.com/cscott/3d-multimaterial/raw/master/imgs/IMG_20170728_134043.jpg",
@@ -244,7 +244,7 @@
                     "title": "Multimaterial community forum"
                 }
             ],
-            "updated": "2017-08-02T17:00:04.019Z"
+            "updated": "2017-08-04T02:29:08.567Z"
         },
         {
             "id": "737eb982-b77f-43e0-ae38-4fc30f3e3170",
@@ -376,9 +376,83 @@
                     "title": "Repo for original Printrboard/Extruderboard"
                 }
             ],
-            "updated": "2017-08-02T17:02:27.877Z"
+            "updated": "2017-08-04T02:28:59.883Z"
+        },
+        {
+            "id": "4b2b1909-8ae7-4448-a28f-22e28d4b5b43",
+            "title": "Track for wooden trains (Brio, Lillabo, Thomas, etc) using 60° system",
+            "url": "https://github.com/cscott/3d-track60",
+            "downloadUrl": "https://github.com/cscott/3d-track60/zipball/master",
+            "authors": [
+                {
+                    "name": "C. Scott Ananian",
+                    "url": "https://cscott.net",
+                    "email": "things@cscott.net"
+                }
+            ],
+            "created": "2017-08-03T18:03:51-04:00",
+            "licenses": [
+                "GPL-2.0+"
+            ],
+            "thumbnailUrls": [
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20160326_113257090_TOP.jpg",
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20170330_125621.jpg",
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20170330_125637.jpg",
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20170330_125650.jpg",
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20170330_125704.jpg",
+                "thumbnails/4b2b1909-8ae7-4448-a28f-22e28d4b5b43/imgs/IMG_20170330_125713.jpg"
+            ],
+            "media": [
+                "PLA"
+            ],
+            "categories": [
+                "FFM"
+            ],
+            "tags": [
+                "wooden track",
+                "wooden train",
+                "train",
+                "brio",
+                "lillabo",
+                "thomas"
+            ],
+            "billOfMaterials": [
+                {
+                    "partNumber": "1",
+                    "description": "Track pieces (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-track60/raw/master/track60.scad",
+                    "type": "source"
+                },
+                {
+                    "partNumber": "2",
+                    "description": "Roundabouts and turntables (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-track60/raw/master/roundabout.scad",
+                    "type": "source"
+                },
+                {
+                    "partNumber": "3",
+                    "description": "Ferry boat (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-track60/raw/master/track60-boat.scad",
+                    "type": "source"
+                },
+                {
+                    "partNumber": "4",
+                    "description": "Swing bridge (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-track60/raw/master/track60-swing-bridge.scad",
+                    "type": "source"
+                }
+            ],
+            "description": "<p></p>\n<p>These files contain a set of wooden-train-compatible track pieces in\nthe <a href=\"http://tamivox.org/dave/train/index60.html\">sixty-degree system described by Dave\nBarber</a>.  Unlike the\nhodgepodge of pieces in the standard Brio/Thomas/Ikea/etc sets, track\nassembled using these pieces will always go together and fit\nperfectly.  No more frustration for you or your kids when your loops\ndon’t <em>quite</em> close up.  No more <a href=\"https://www.thingiverse.com/thing:661462\">flexible\ntrack</a> kludges.</p>\n<p>In addition, I’ve made adapter pieces for many popular accessories,\nsuch as those from the\n<a href=\"http://magicref.tripod.com/trains/trainhistory2.htm\">Ertl Hometown Roadway</a>,\nso that they fit into the 60-degree system.</p>\n<h4 id=\"some-discussion-of-size\">Some discussion of size</h4>\n<p>Dave Barber suggests a base radius for the system of 200mm.  The core\nhexagon will then have a diameter of 267mm and straights will be 231mm\nlong.</p>\n<p>I have instead chosen a base radius of 154mm, which makes 7 hex cells\narranged flat-to-flat measure 49 inches.  That works well with a\n<a href=\"http://wtrak.org/\">wTrak</a>-like system with 48” tables and 1” gaps between them (filled\nwith leg assemblies).  Our straights are about 7” long.</p>\n<p>For comparison, according to\n<a href=\"http://www.woodenrailway.info/track/trackguide.html\">woodenrailway.info</a>\nthe standard Brio “E” curve has a centerline radius of 202mm\nand the tighter Brio “E1” curve has a centerline radius of 110mm.\nTypical Brio straights are 4.5”, 5.5”, and 8.5”.  Our 154mm curves\nand 7” straights fit reasonably well into this family.</p>\n<p>For riser heights, although the Brio standard is 64mm, some other sets\nhave 62mm risers.  We’ve split the difference in making levels separated\nby 63mm.  This should be easily interoperable with existing pieces using\neither the 62mm or 64mm heights.</p>\n<p>We like the <a href=\"http://wtrak.org/tracks.htm\">“clickity-clack track that Learning Curve abandoned years ago”</a> so our rail pieces contain grooves for the ties\nin order to make that audible clack as trains are rolled over it.\nMost of our pieces have road on one side and rail on the other, so you\ncan play with cars or trains or both.</p>\n<p></p>",
+            "relationships": [
+                {
+                    "type": "reference",
+                    "url": "http://tamivox.org/dave/train/",
+                    "title": "Dave Barber’s Observations on Track for Toy Trains"
+                }
+            ],
+            "updated": "2017-08-04T03:43:16.856Z"
         }
     ],
-    "thingsCount": 2,
-    "updated": "2017-08-02T17:02:27.877Z"
+    "thingsCount": 3,
+    "updated": "2017-08-04T03:43:16.856Z"
 }
