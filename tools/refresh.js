@@ -275,12 +275,13 @@ var mapFieldUrls = function(obj, props, alsoLocal) {
 };
 
 var copyRelativeUrl = function(url) {
-    if (!isRelativeUrl(url)) { return; }
+    if (!isRelativeUrl(url)) { return false; }
     var wasPath = path.join(path.dirname(argv.file), url);
     mkdirp.sync(path.join(thumbPath, path.dirname(url)));
     cp.sync(wasPath, path.join(thumbPath, url));
     var newPath = 'thumbnails/' + thing.id + '/' + url;
     thumbMap.set(url, newPath);
+    return true;
 };
 
 rimraf.sync(thumbPath, { disableGlob: true });
@@ -292,7 +293,9 @@ if ((thing.thumbnailUrls || []).length) {
 (thing.billOfMaterials || []).forEach(function(bom) {
     if (bom.thumbnailUrl) {
         if (!thumbMap.has(bom.thumbnailUrl)) {
-            copyRelativeUrl(bom.thumbnailUrl);
+            if (copyRelativeUrl(bom.thumbnailUrl)) {
+                thing.thumbnailUrls.push(bom.thumbnailUrl);
+            }
         }
     } else if (isRelativeUrl(bom.url)) {
         // generate some preview images automatically
