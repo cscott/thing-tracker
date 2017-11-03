@@ -273,21 +273,28 @@ var mapFieldUrls = function(obj, props, alsoLocal) {
         }
     }
 };
+
+var copyRelativeUrl = function(url) {
+    if (!isRelativeUrl(url)) { return; }
+    var wasPath = path.join(path.dirname(argv.file), url);
+    mkdirp.sync(path.join(thumbPath, path.dirname(url)));
+    cp.sync(wasPath, path.join(thumbPath, url));
+    var newPath = 'thumbnails/' + thing.id + '/' + url;
+    thumbMap.set(url, newPath);
+};
+
 rimraf.sync(thumbPath, { disableGlob: true });
 if ((thing.thumbnailUrls || []).length) {
-    thing.thumbnailUrls.forEach(function(url) {
-        if (!isRelativeUrl(url)) { return; }
-        var wasPath = path.join(path.dirname(argv.file), url);
-        mkdirp.sync(path.join(thumbPath, path.dirname(url)));
-        cp.sync(wasPath, path.join(thumbPath, url));
-        var newPath = 'thumbnails/' + thing.id + '/' + url;
-        thumbMap.set(url, newPath);
-    });
+    thing.thumbnailUrls.forEach(copyRelativeUrl);
 } else { thing.thumbnailUrls = []; }
 
 // Create some thumbnails automatically.
 (thing.billOfMaterials || []).forEach(function(bom) {
-    if (!bom.thumbnailUrl && isRelativeUrl(bom.url)) {
+    if (bom.thumbnailUrl) {
+        if (!thumbMap.has(bom.thumbnailUrl)) {
+            copyRelativeUrl(bom.thumbnailUrl);
+        }
+    } else if (isRelativeUrl(bom.url)) {
         // generate some preview images automatically
         var url = bom.url; // because it will change!
         var newPath = 'thumbnails/' + thing.id + '/' + url + '.png';
