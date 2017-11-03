@@ -451,8 +451,148 @@
                 }
             ],
             "updated": "2017-08-04T03:43:16.856Z"
+        },
+        {
+            "id": "6400396d-9777-424c-8209-8ab2d352c14b",
+            "title": "Enclosure for 3d printer based on Ikea Melltorp tables",
+            "url": "https://github.com/cscott/3d-melltorp",
+            "downloadUrl": "https://github.com/cscott/3d-melltorp/zipball/master",
+            "authors": [
+                {
+                    "name": "C. Scott Ananian",
+                    "url": "https://cscott.net",
+                    "email": "things@cscott.net"
+                }
+            ],
+            "created": "2017-11-03T11:51:10-04:00",
+            "licenses": [
+                "GPL-2.0+"
+            ],
+            "thumbnailUrls": [
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025035.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_024427.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/melltorp-stl/melltorp-above.stl.png",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025051.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/melltorp.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/plexiglass.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/magnets.jpg"
+            ],
+            "media": [
+                "PLA"
+            ],
+            "categories": [
+                "FFM"
+            ],
+            "tags": [
+                "enclosure",
+                "ikea",
+                "melltorp"
+            ],
+            "billOfMaterials": [
+                {
+                    "partNumber": "1",
+                    "description": "Enclosure pieces (OpenSCAD source)",
+                    "url": "https://github.com/cscott/3d-melltorp/raw/master/melltorp.scad",
+                    "type": "source",
+                    "mimetype": "application/x-scad"
+                },
+                {
+                    "partNumber": "2a",
+                    "description": "Leg coupler (wraps around table top)",
+                    "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above-wrap.stl",
+                    "type": "generated",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_024427.jpg",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "2b",
+                    "description": "Leg coupler (screws into table top)",
+                    "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above.stl",
+                    "type": "generated",
+                    "mimetype": "application/sla",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/melltorp-stl/melltorp-above.stl.png"
+                },
+                {
+                    "partNumber": "3",
+                    "description": "Magnet holder (mounts below table top)",
+                    "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl",
+                    "type": "generated",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025051.jpg",
+                    "mimetype": "application/sla"
+                },
+                {
+                    "partNumber": "4",
+                    "description": "Ikea Melltorp table",
+                    "unit": "EA",
+                    "quantity": 2,
+                    "url": "http://www.ikea.com/us/en/catalog/products/S39011781/",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/melltorp.jpg"
+                },
+                {
+                    "partNumber": "5",
+                    "description": "28\" x 30\" x .08\" plexiglass",
+                    "unit": "EA",
+                    "quantity": 4,
+                    "url": "https://www.lowes.com/pd/OPTIX-0-08-in-x-30-in-x-30-in-Clear-Acrylic-Sheet/3978817",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/plexiglass.jpg"
+                },
+                {
+                    "partNumber": "6",
+                    "description": "10mm x 3mm Neodymium magnets",
+                    "unit": "EA",
+                    "quantity": 16,
+                    "url": "https://amazon.com/gp/product/B01MFHNHNW/",
+                    "thumbnailUrl": "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/magnets.jpg"
+                }
+            ],
+            "description": "<p></p>\n<p>This repository contains a collection of parts used to create a 29.5”\nx 29.5” 3D printer enclosure based on IKEA <a href=\"http://www.ikea.com/us/en/catalog/products/S39011781/\">Melltorp</a> tables.  It was\ninspired by the many similar designs for enclosures based on the IKEA\n<a href=\"http://www.ikea.com/us/en/catalog/products/20011408/\">Lack</a> tables, but my modified Printrbot Simple Metal printer is a bit\ntoo large to fit in the 22” x 22” space provided by the Lack.</p>\n<p>You will need two Melltorp tables.  You could probably stack these\nthree high if you wanted an enclosure for two printers.</p>\n<p></p>",
+            "instructions": [
+                {
+                    "step": 1,
+                    "text": "<b>Assemble bottom table.</b><br>\n<p></p>\n<p>Follow the Ikea instructions for assembling the bottom table.  After\nassembly, flip the table upright and unscrew the four allen-head bolts\nattaching the table top to the leg assembly.  Slide four printer leg\nholder pieces (part 2a) over the corners of the table, inserting the\nwhite Ikea spacers into the cutouts provided, then reattach the table\ntop using the allen-head bolts.</p>\n<p>\n</p>\n<p>Alternatively, you could use part 2b and screw the leg holders directly\ninto the table top.</p>\n<p></p>",
+                    "images": [
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024927.jpg",
+                        "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_024427.jpg"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "text": "<b>Assemble top table.</b><br>\n<p></p>\n<p>Again, follow the Ikea instructions to assemble the top table, but\nsandwich the four magnet holders (part 3) between the legs and table\ntop, using the white Ikea spacers in the provided cutouts for alignment.</p>\n<p>\n</p>\n<p></p>",
+                    "images": [
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024508.jpg",
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024500.jpg"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "text": "<b>Stack the tables</b><br>\n<p></p>\n<p>Pry off the white plastic caps on the end of each leg on the top\ntable, then stack the top table on top of the bottom table.</p>\n<p></p>",
+                    "images": [
+                        "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025035.jpg"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "text": "<b>Trim plexiglass</b><br>\n<p>Trim 4 sheets of <a href=\"https://www.lowes.com/pd/OPTIX-0-08-in-x-30-in-x-30-in-Clear-Acrylic-Sheet/3978817\">plexiglass</a> to 28” x 29.25”.  (Note that the link\ngoes to Lowe’s, which sells “30in x 30in” sheets of plexiglass which are\nreally 28” x 30”.  If you get your plexiglass from a different source,\nyou might want to extend the 28” side up to 28.5” for a better seal.)</p>"
+                },
+                {
+                    "step": 5,
+                    "text": "<b>Install magnets</b><br>"
+                },
+                {
+                    "step": 6,
+                    "text": "<b>Install handles</b><br>"
+                }
+            ],
+            "relationships": [
+                {
+                    "type": "reference",
+                    "url": "https://www.thingiverse.com/thing:1843235",
+                    "title": "An excellent printer enclosure using a Lack table."
+                }
+            ],
+            "updated": "2017-11-03T17:36:19.553Z"
         }
     ],
-    "thingsCount": 3,
-    "updated": "2017-08-04T03:43:16.856Z"
+    "thingsCount": 4,
+    "updated": "2017-11-03T17:36:19.553Z"
 }
