@@ -244,7 +244,7 @@ if (readme) {
 // Adjust mimetypes in BOM
 (thing.billOfMaterials || []).forEach(function(bom) {
     if (!bom.mimetype) {
-        var m = /\.([^.])+$/.exec(bom.url);
+        var m = /\.([^.]+)$/.exec(bom.url);
         if (m && mimeTypes[m[1]]) {
             bom.mimetype = mimeTypes[m[1]];
         }
