@@ -159,10 +159,17 @@ var stripWS = function(s) {
     return s.replace(/(^\s+)|(\s+$)/g, '');
 };
 
-if (argv.readme) {
+var readme = argv.readme;
+// Look for a readme in the same directory as thing.json
+if (!readme) {
+    readme = path.join(path.dirname(argv.file), 'README.md');
+    if (!fs.existsSync(readme)) { readme = null; }
+}
+
+if (readme) {
     marked.setOptions({ smartypants: true });
     var doc = domino.createDocument(
-        marked(fs.readFileSync(argv.readme, 'utf8')), true
+        marked(fs.readFileSync(readme, 'utf8')), true
     );
     // description
     var descDoc = extractSectionDoc(doc, 'h2#description');
