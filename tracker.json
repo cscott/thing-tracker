@@ -469,7 +469,7 @@
                 "GPL-2.0+"
             ],
             "thumbnailUrls": [
-                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025035.jpg",
+                "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171106_115124.jpg",
                 "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_024427.jpg",
                 "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/melltorp-stl/melltorp-above.stl.png",
                 "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025051.jpg",
@@ -594,7 +594,7 @@
                 },
                 {
                     "step": 2,
-                    "text": "<b>Assemble top table.</b><br>\n<p></p>\n<p>Again, follow the Ikea instructions to assemble the top table, but\nsandwich the four magnet holders (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl\"><code>melltorp-below.stl</code></a>) between the\nlegs and tabletop, using the white Ikea spacers in the provided\ncutouts for alignment.</p>\n<p>\n</p>\n<p></p>",
+                    "text": "<b>Assemble top table.</b><br>\n<p></p>\n<p>Again, follow the Ikea instructions to assemble the top table, but\nsandwich the four magnet holders (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl\"><code>melltorp-below.stl</code></a>) between the\nlegs and tabletop, using the white Ikea spacers in the provided\ncutouts for alignment. I also recommend using <a href=\"https://amazon.com/gp/product/B00005202Y\">foam sealing tape</a>\nbetween the table frame and table top to seal the gap.</p>\n<p>\n</p>\n<p></p>",
                     "images": [
                         "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024508.jpg",
                         "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024500.jpg"
@@ -604,20 +604,32 @@
                     "step": 3,
                     "text": "<b>Stack the tables</b><br>\n<p></p>\n<p>Pry off the white plastic caps on the end of each leg on the top\ntable, then stack the top table on top of the bottom table.</p>\n<p></p>",
                     "images": [
-                        "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025035.jpg"
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_025035.jpg"
                     ]
                 },
                 {
                     "step": 4,
-                    "text": "<b>Trim plexiglass</b><br>\n<p>Trim 4 sheets of <a href=\"https://www.lowes.com/pd/OPTIX-0-08-in-x-30-in-x-30-in-Clear-Acrylic-Sheet/3978817\">28”x30” plexiglass</a> to 28” x 29.25”.  (Note that the\nlink goes to Lowe’s, which sells “30in x 30in” sheets of plexiglass\nwhich are really 28” x 30”.  If you get your plexiglass from a\ndifferent source, you might want to extend the 28” side up to 28.5”\nfor a better seal.)</p>"
+                    "text": "<b>Trim plexiglass</b><br>\n<p></p>\n<p>Trim 4 sheets of <a href=\"https://www.lowes.com/pd/OPTIX-0-08-in-x-30-in-x-30-in-Clear-Acrylic-Sheet/3978817\">28”x30” plexiglass</a> to 28” x 29.25”.  (Note that the\nlink goes to Lowe’s, which sells “30in x 30in” sheets of plexiglass\nwhich are really 28” x 30”.  If you get your plexiglass from a\ndifferent source, you might want to extend the 28” side up to 28.5”\nfor a better seal.)</p>\n<p>The bottom of the plexiglass will slide into the space between the\ntable legs and the leg holder.</p>\n<p></p>",
+                    "images": [
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171104_102243.jpg"
+                    ]
                 },
                 {
                     "step": 5,
-                    "text": "<b>Install magnets</b><br>\n<p>Insert magnets into the indents by the table legs.  Take care to\nensure the polarities of the magnets are consistent.  Now insert\nmagnets into the magnet mount rings (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-holder.stl\"><code>melltorp-holder.stl</code></a>), again\ntaking care to ensure that the polarity is consistent and that the\nopen end of the mount ring is attracted to the open side of the table\nleg magnets.  Slide the plexiglass into the channels at the bottom,\nand use the mounted magnets to secure the top of the plexiglass.  Use\nsome superglue to affix the magnet mounts permanently to the\nplexiglass once you have things lined up.</p>"
+                    "text": "<b>Install magnets</b><br>\n<p></p>\n<p>Insert magnets into the indents by the table legs.  Take care to\nensure the polarities of the magnets are consistent.</p>\n<p>\n</p>\n<p>Now insert\nmagnets into the magnet mount rings (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-holder.stl\"><code>melltorp-holder.stl</code></a>), again\ntaking care to ensure that the polarity is consistent and that the\nopen end of the mount ring is attracted to the open side of the table\nleg magnets.  Slide the plexiglass into the channels at the bottom,\nand use the mounted magnets to secure the top of the plexiglass.  Use\nsome superglue to affix the magnet mounts permanently to the\nplexiglass once you have things lined up.</p>\n<p>\n</p>\n<p>I also added a pair of mounted magnets 8” and 16” down from the top\nof the leg, in order to better seal the sides of the plexiglass.\nFor the side pieces, I added some <a href=\"https://amazon.com/gp/product/B00005202Y\">foam sealing tape</a>, and superglued\none magnet directly to the table frame.  A mounted magnet glued to\nthe plexiglass at this same spot helps keep the plexiglass pressed\ninto the foam tape.</p>\n<p></p>",
+                    "images": [
+                        "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_025051.jpg",
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171104_102153.jpg",
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171106_115140.jpg"
+                    ]
                 },
                 {
                     "step": 6,
-                    "text": "<b>Install handles</b><br>\n<p>Use M3 x 12mm socket head screws and M3 nuts to attach handles\n(<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-handle-top.stl\"><code>melltorp-handle-top.stl</code></a>) to either side of the plexiglass.\nNote that I had some issues with the plexiglass cracking when I\ndrilled the screw holes for mounting; you may wish to dispense\nwith the screws and just glue the handles in place.</p>\n<p>I find it most convenient to have a handle for gripping on both\nsides of the plexiglass, so I can easily lift the sheets into\nplace or out of the way, but if you want to save some printing\ntime you can glue handles on only one side, or else use\n<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-handle-bottom.stl\"><code>melltorp-handle-bottom.stl</code></a> on the back side.</p>"
+                    "text": "<b>Install handles</b><br>\n<p></p>\n<p>Use M3 x 12mm socket head screws and M3 nuts to attach handles\n(<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-handle-top.stl\"><code>melltorp-handle-top.stl</code></a>) to either side of the plexiglass.\nNote that I had some issues with the plexiglass cracking when I\ndrilled the screw holes for mounting; I recommend supergluing\none side to the plexiglass and then using it as a guide when\ndrilling.  The glued side would prevent any crack from spreading,\nbut it also seems to prevent cracking in the first place.</p>\n<p>\n</p>\n<p>I find it most convenient to have a handle for gripping on both\nsides of the plexiglass, so I can easily lift the sheets into\nplace or out of the way, but if you want to save some printing\ntime you can glue handles on only one side, or else use\n<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-handle-bottom.stl\"><code>melltorp-handle-bottom.stl</code></a> on the back side.</p>\n<p></p>",
+                    "images": [
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171104_102214.jpg",
+                        "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171106_115210.jpg"
+                    ]
                 }
             ],
             "relationships": [
@@ -627,9 +639,9 @@
                     "title": "An excellent printer enclosure using a Lack table."
                 }
             ],
-            "updated": "2017-11-04T13:47:59.063Z"
+            "updated": "2017-11-06T21:08:31.218Z"
         }
     ],
     "thingsCount": 4,
-    "updated": "2017-11-04T13:47:59.063Z"
+    "updated": "2017-11-06T21:08:31.218Z"
 }
