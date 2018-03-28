@@ -501,7 +501,7 @@
                 },
                 {
                     "partNumber": "2a",
-                    "description": "Leg coupler (wraps around table top)",
+                    "description": "Leg coupler (wraps around table top) [2 of these should be mirrored]",
                     "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above-wrap.stl",
                     "type": "generated",
                     "unit": "EA",
@@ -511,7 +511,7 @@
                 },
                 {
                     "partNumber": "2b",
-                    "description": "Leg coupler (screws into table top) [optional]",
+                    "description": "Leg coupler (screws into table top) [optional] [2 of these should be mirrored]",
                     "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above.stl",
                     "type": "generated",
                     "unit": "EA",
@@ -521,7 +521,7 @@
                 },
                 {
                     "partNumber": "3",
-                    "description": "Magnet holder (mounts below table top)",
+                    "description": "Magnet holder (mounts below table top) [2 of these should be mirrored]",
                     "url": "https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl",
                     "type": "generated",
                     "unit": "EA",
@@ -586,7 +586,7 @@
             "instructions": [
                 {
                     "step": 1,
-                    "text": "<b>Assemble bottom table.</b><br>\n<p></p>\n<p>Follow the Ikea instructions for assembling the bottom table.  After\nassembly, flip the table upright and unscrew the four allen-head bolts\nattaching the tabletop to the leg assembly.  Slide four printer leg\nholder pieces (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above-wrap.stl\"><code>melltorp-above-wrap.stl</code></a>) over the corners of the\ntable, inserting the white Ikea spacers into the cutouts provided,\nthen reattach the tabletop using the allen-head bolts.</p>\n<p>\n</p>\n<p>Alternatively, you could use <a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above.stl\"><code>melltorp-above.stl</code></a> and screw the leg\nholders directly into the table top.</p>\n<p></p>",
+                    "text": "<b>Assemble bottom table.</b><br>\n<p></p>\n<p>Follow the Ikea instructions for assembling the bottom table.  After\nassembly, flip the table upright and unscrew the four allen-head bolts\nattaching the tabletop to the leg assembly.  Slide four printer leg\nholder pieces (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above-wrap.stl\"><code>melltorp-above-wrap.stl</code></a>; 2 of these will need to be\nmirrored) over the corners of the\ntable, inserting the white Ikea spacers into the cutouts provided,\nthen reattach the tabletop using the allen-head bolts.</p>\n<p>\n</p>\n<p>Alternatively, you could use <a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-above.stl\"><code>melltorp-above.stl</code></a> and screw the leg\nholders directly into the table top. (Again, two should be printed out\nas mirror images.)</p>\n<p></p>",
                     "images": [
                         "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024927.jpg",
                         "thumbnails/6400396d-9777-424c-8209-8ab2d352c14b/imgs/IMG_20171101_024427.jpg"
@@ -594,7 +594,7 @@
                 },
                 {
                     "step": 2,
-                    "text": "<b>Assemble top table.</b><br>\n<p></p>\n<p>Again, follow the Ikea instructions to assemble the top table, but\nsandwich the four magnet holders (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl\"><code>melltorp-below.stl</code></a>) between the\nlegs and tabletop, using the white Ikea spacers in the provided\ncutouts for alignment. I also recommend using <a href=\"https://amazon.com/gp/product/B00005202Y\">foam sealing tape</a>\nbetween the table frame and table top to seal the gap.</p>\n<p>\n</p>\n<p></p>",
+                    "text": "<b>Assemble top table.</b><br>\n<p></p>\n<p>Again, follow the Ikea instructions to assemble the top table, but\nsandwich the four magnet holders (<a href=\"https://github.com/cscott/3d-melltorp/blob/master/melltorp-stl/melltorp-below.stl\"><code>melltorp-below.stl</code></a>, 2 will be mirrored)\nbetween the\nlegs and tabletop, using the white Ikea spacers in the provided\ncutouts for alignment. I also recommend using <a href=\"https://amazon.com/gp/product/B00005202Y\">foam sealing tape</a>\nbetween the table frame and table top to seal the gap.</p>\n<p>\n</p>\n<p></p>",
                     "images": [
                         "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024508.jpg",
                         "https://github.com/cscott/3d-melltorp/raw/master/imgs/IMG_20171101_024500.jpg"
@@ -639,9 +639,9 @@
                     "title": "An excellent printer enclosure using a Lack table."
                 }
             ],
-            "updated": "2017-11-06T21:08:31.218Z"
+            "updated": "2018-03-28T19:54:13.580Z"
         }
     ],
     "thingsCount": 4,
-    "updated": "2017-11-06T21:08:31.218Z"
+    "updated": "2018-03-28T19:54:13.580Z"
 }
